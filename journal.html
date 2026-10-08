@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MindCare Hub - Wellness Journal</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/component.css">
+  <link rel="stylesheet" href="css/premium-theme.css">
+  <link rel="stylesheet" href="css/journal.css">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+<!-- Navbar injected by component.js -->
+  <div id="mouse-glow"></div>
+
+  <main class="journal-page">
+    <section class="glass-card journal-hero">
+      <div>
+        <h1 class="journal-hero-title">My Wellness Journal</h1>
+        <p class="journal-hero-subtitle">A private place to reflect on your thoughts, emotions and daily experiences.</p>
+      </div>
+      <div class="journal-hero-art">
+        <i class="fa-regular fa-pen-to-square"></i>
+      </div>
+    </section>
+
+    <section class="journal-stats-grid">
+      <div class="glass-card journal-stat-card">
+        <div class="journal-stat-icon"><i class="fa-solid fa-book-open"></i></div>
+        <div><div class="journal-stat-title" id="stat-total">0</div><p class="journal-stat-label">Total Journals</p></div>
+      </div>
+      <div class="glass-card journal-stat-card">
+        <div class="journal-stat-icon"><i class="fa-solid fa-bolt"></i></div>
+        <div><div class="journal-stat-title" id="stat-streak">0</div><p class="journal-stat-label">Writing Streak</p></div>
+      </div>
+      <div class="glass-card journal-stat-card">
+        <div class="journal-stat-icon"><i class="fa-solid fa-face-smile"></i></div>
+        <div><div class="journal-stat-title" id="stat-mood">Calm</div><p class="journal-stat-label">Current Mood</p></div>
+      </div>
+      <div class="glass-card journal-stat-card">
+        <div class="journal-stat-icon"><i class="fa-solid fa-clock"></i></div>
+        <div><div class="journal-stat-title" id="stat-time">0m</div><p class="journal-stat-label">Total Writing Time</p></div>
+      </div>
+    </section>
+
+    <section class="journal-workspace-grid">
+      <aside class="glass-card journal-sidebar">
+        <div class="journal-sidebar-controls">
+          <div class="journal-search-bar">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input id="timeline-search" class="form-control journal-search-input" placeholder="Search title, content, category">
+          </div>
+          <div class="journal-filter-row">
+            <select id="timeline-filter" class="form-select journal-filter-select">
+              <option value="All">All</option>
+              <option value="Happy">Happy</option>
+              <option value="Calm">Calm</option>
+              <option value="Sad">Sad</option>
+              <option value="Angry">Angry</option>
+              <option value="Anxious">Anxious</option>
+              <option value="Excited">Excited</option>
+              <option value="Neutral">Neutral</option>
+            </select>
+            <select id="timeline-sort" class="form-select journal-sort-select">
+              <option value="newest">Newest</option>
+              <option value="oldest">Oldest</option>
+              <option value="az">A-Z</option>
+              <option value="za">Z-A</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="journal-timeline" id="timeline-list">
+          <div class="journal-timeline-line"></div>
+        </div>
+
+        <div class="journal-empty-state" id="empty-state">
+          <div>
+            <div class="journal-empty-icon">??</div>
+            <div class="journal-empty-title">No Journal Entries Yet</div>
+            <p class="mb-0">Start writing your first journal.</p>
+          </div>
+        </div>
+      </aside>
+
+      <section class="glass-card journal-editor">
+        <div class="journal-editor-header">
+          <div class="journal-editor-top">
+            <input id="editor-title" class="journal-editor-title" placeholder="Untitled Journal Entry">
+            <div class="journal-date" id="current-date-label">Today</div>
+            <select id="editor-category" class="form-select journal-category">
+              <option value="Reflection">Reflection</option>
+              <option value="Gratitude">Gratitude</option>
+              <option value="Daily Log">Daily Log</option>
+              <option value="Goals">Goals</option>
+              <option value="Anxiety Relief">Anxiety Relief</option>
+            </select>
+          </div>
+
+          <div class="journal-mood-pills" id="mood-selector">
+            <button type="button" class="journal-mood-pill journal-mood-pill-active" data-mood="Calm">?? Calm</button>
+            <button type="button" class="journal-mood-pill" data-mood="Happy">?? Happy</button>
+            <button type="button" class="journal-mood-pill" data-mood="Sad">?? Sad</button>
+            <button type="button" class="journal-mood-pill" data-mood="Angry">?? Angry</button>
+            <button type="button" class="journal-mood-pill" data-mood="Anxious">?? Anxious</button>
+            <button type="button" class="journal-mood-pill" data-mood="Excited">?? Excited</button>
+            <button type="button" class="journal-mood-pill" data-mood="Neutral">?? Neutral</button>
+          </div>
+        </div>
+
+        <div class="journal-divider"></div>
+
+        <div class="journal-writing-area">
+          <textarea id="editor-content" class="journal-textarea" placeholder="Start writing your thoughts here..."></textarea>
+        </div>
+
+        <div class="journal-counter-bar">
+          <span id="auto-save-status">Draft saved locally</span>
+          <span><span id="word-count">0 words</span> – <span id="char-count">0 chars</span> – <span id="read-time">0 min read</span></span>
+        </div>
+
+        <div class="journal-actions">
+          <div class="d-flex gap-2 flex-wrap">
+            <button class="journal-btn journal-btn-save" id="save-journal-btn"><i class="fa-solid fa-floppy-disk me-1"></i> Save Journal</button>
+            <button class="journal-btn journal-btn-update d-none" id="update-journal-btn"><i class="fa-solid fa-pen-to-square me-1"></i> Update Journal</button>
+            <button class="journal-btn journal-btn-clear" id="clear-editor-btn">Clear</button>
+          </div>
+          <div class="d-flex gap-2 flex-wrap">
+            <button class="journal-btn journal-btn-delete d-none" id="delete-journal-btn">Delete Journal</button>
+            <button class="journal-btn journal-btn-export" id="export-data-btn"><i class="fa-solid fa-file-arrow-down me-1"></i> Export PDF</button>
+          </div>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <div class="toast-container">
+    <div id="liveToast" class="toast journal-toast align-items-center border-0" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="d-flex">
+        <div class="toast-body" id="toast-message-text">Saved successfully</div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="journalModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div>
+            <h5 class="modal-title" id="modalJournalTitle">Journal Entry</h5>
+            <small class="text-muted" id="modalJournalMeta"></small>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <div id="modalJournalContent" style="white-space:pre-wrap; line-height:1.8; color:var(--text);"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- Footer injected by component.js -->
+  <script src="js/common.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/journal.js"></script>
+<script src="js/component.js"></script>
+</body>
+</html>

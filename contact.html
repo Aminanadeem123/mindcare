@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us | MindCare Hub</title>
+<meta name="description" content="Contact MindCare Hub for mental health support, counseling, and appointments.">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css">
+<link rel="stylesheet" href="css/global.css">
+<link rel="stylesheet" href="css/component.css">
+<link rel="stylesheet" href="css/contact.css">
+</head>
+<body>
+
+<!-- Mouse Glow -->
+<div class="mc-mouse-glow" data-mouse-glow aria-hidden="true"></div>
+
+<!-- Ambient Particles -->
+<div class="mc-particles" data-particles data-particle-count="22" aria-hidden="true"></div>
+
+<!-- Navbar injected by component.js -->
+
+<main class="mc-main">
+
+  <!-- HERO -->
+  <section class="contact-hero" aria-labelledby="contact-hero-heading">
+    <span class="contact-hero__blob contact-hero__blob--one" aria-hidden="true"></span>
+    <span class="contact-hero__blob contact-hero__blob--two" aria-hidden="true"></span>
+    <span class="contact-hero__blob contact-hero__blob--three" aria-hidden="true"></span>
+
+    <span class="contact-hero__badge"><i class="bi bi-stars"></i> We'd love to hear from you</span>
+    <h1 id="contact-hero-heading" class="contact-hero__title">Let's talk, gently.</h1>
+    <p class="contact-hero__subtitle">
+      Whether it's a question, a booking, or just something on your mind — reach out below.
+      Our team usually replies within a day, and every message is read with care.
+    </p>
+  </section>
+
+  <!-- MAIN LAYOUT -->
+  <section class="contact-layout">
+
+    <!-- FORM -->
+    <section class="mc-glass-card contact-form-card" aria-labelledby="contact-form-heading">
+      <h2 id="contact-form-heading">Send us a message</h2>
+      <p class="form-note">Every field is validated as you type — no surprises at submit.</p>
+
+      <form id="contactForm" novalidate>
+
+        <div class="bubble-grid">
+          <div class="bubble-field" data-field="name">
+            <div class="bubble-field__shell">
+              <span class="bubble-field__icon"><i class="bi bi-person"></i></span>
+              <input class="bubble-field__control" type="text" id="fullName" name="fullName" autocomplete="name" aria-describedby="nameMsg">
+              <label class="bubble-field__label" for="fullName">Full name</label>
+              <span class="bubble-field__status" data-status aria-hidden="true"></span>
+            </div>
+            <div class="bubble-field__message" id="nameMsg" data-message role="alert"></div>
+          </div>
+
+          <div class="bubble-field" data-field="email">
+            <div class="bubble-field__shell">
+              <span class="bubble-field__icon"><i class="bi bi-envelope"></i></span>
+              <input class="bubble-field__control" type="email" id="email" name="email" autocomplete="email" aria-describedby="emailMsg">
+              <label class="bubble-field__label" for="email">Email address</label>
+              <span class="bubble-field__status" data-status aria-hidden="true"></span>
+            </div>
+            <div class="bubble-field__message" id="emailMsg" data-message role="alert"></div>
+          </div>
+
+          <div class="bubble-field" data-field="phone">
+            <div class="bubble-field__shell">
+              <span class="bubble-field__icon"><i class="bi bi-telephone"></i></span>
+              <input class="bubble-field__control" type="tel" id="phone" name="phone" autocomplete="tel" aria-describedby="phoneMsg">
+              <label class="bubble-field__label" for="phone">Phone number</label>
+              <span class="bubble-field__status" data-status aria-hidden="true"></span>
+            </div>
+            <div class="bubble-field__message" id="phoneMsg" data-message role="alert"></div>
+          </div>
+
+          <div class="bubble-field" data-field="subject">
+            <div class="bubble-field__shell">
+              <span class="bubble-field__icon"><i class="bi bi-chat-square-text"></i></span>
+              <input class="bubble-field__control" type="text" id="subject" name="subject" autocomplete="off" aria-describedby="subjectMsg">
+              <label class="bubble-field__label" for="subject">Subject</label>
+              <span class="bubble-field__status" data-status aria-hidden="true"></span>
+            </div>
+            <div class="bubble-field__message" id="subjectMsg" data-message role="alert"></div>
+          </div>
+
+          <div class="bubble-field bubble-field--full bubble-field--textarea" data-field="message">
+            <div class="bubble-field__shell">
+              <span class="bubble-field__icon"><i class="bi bi-pencil"></i></span>
+              <textarea class="bubble-field__control" id="message" name="message" rows="4" aria-describedby="messageMsg"></textarea>
+              <label class="bubble-field__label" for="message">Tell us what's on your mind</label>
+              <span class="bubble-field__status" data-status aria-hidden="true"></span>
+            </div>
+            <div class="bubble-field__footer">
+              <div class="bubble-field__message" id="messageMsg" data-message role="alert"></div>
+              <div class="bubble-field__counter" data-counter>0 / 20</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-submit-row">
+          <p class="consent-text">By sending this message, you agree to be contacted by our team on WhatsApp or email regarding your query.</p>
+          <button type="submit" class="premium-submit" id="submitBtn">
+            <span class="premium-submit__icon"><i class="bi bi-send-fill"></i></span>
+            <span class="premium-submit__spinner" aria-hidden="true"></span>
+            <span class="premium-submit__text">Send message</span>
+          </button>
+        </div>
+      </form>
+    </section>
+
+    <!-- INFO COLUMN -->
+    <section class="contact-info" aria-label="Contact details">
+
+      <div class="mc-glass-card">
+        <h2>Clinic contact details</h2>
+        <div class="info-item-list">
+          <div class="info-item">
+            <span class="info-item__icon"><i class="bi bi-envelope-fill"></i></span>
+            <div>
+              <div class="info-item__label">Email</div>
+              <div class="info-item__value">support@mindcarehub.com</div>
+              <div class="info-item__hint">For general queries and appointment confirmations.</div>
+            </div>
+          </div>
+          <div class="info-item">
+            <span class="info-item__icon"><i class="bi bi-telephone-fill"></i></span>
+            <div>
+              <div class="info-item__label">Phone / WhatsApp</div>
+              <div class="info-item__value">+92 300 1234567</div>
+              <div class="info-item__hint">Available Mon – Fri: 9 AM – 6 PM</div>
+            </div>
+          </div>
+          <div class="info-item">
+            <span class="info-item__icon"><i class="bi bi-geo-alt-fill"></i></span>
+            <div>
+              <div class="info-item__label">Address</div>
+              <div class="info-item__value">Karachi, Pakistan</div>
+              <div class="info-item__hint">MindCare Hub – Mental Wellness Clinic</div>
+            </div>
+          </div>
+          <div class="info-item">
+            <span class="info-item__icon"><i class="bi bi-clock-fill"></i></span>
+            <div>
+              <div class="info-item__label">Working hours</div>
+              <div class="info-item__value">Mon – Fri: 9 AM – 6 PM</div>
+              <div class="info-item__hint">Limited weekend slots available on request.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mc-glass-card faq-card">
+        <h3><i class="bi bi-question-circle-fill"></i> Quick FAQs</h3>
+        <details>
+          <summary>How can I contact MindCare Hub?</summary>
+          <p>You can use the contact form, email us directly, or call/WhatsApp on the provided number.</p>
+        </details>
+        <details>
+          <summary>How long does a reply take?</summary>
+          <p>We aim to respond within 24 hours on working days. Weekend messages may be answered on Monday.</p>
+        </details>
+        <details>
+          <summary>Is my information secure?</summary>
+          <p>Yes, we respect your privacy. Your information is only used to respond to your query and plan care.</p>
+        </details>
+      </div>
+
+      <div class="mc-glass-card emergency-card">
+        <h3><i class="bi bi-exclamation-triangle-fill"></i> Emergency notice</h3>
+        <p>
+          If you are experiencing a mental health emergency (suicidal thoughts, self-harm, or immediate danger),
+          please contact your local emergency services or nearest hospital immediately instead of using this form.
+        </p>
+      </div>
+
+    </section>
+  </section>
+</main>
+
+<!-- Success banner -->
+<div class="success-banner" id="successBanner" role="status" aria-live="polite">
+  <i class="bi bi-check-circle-fill"></i>
+  <span>Message sent successfully — we'll reply soon.</span>
+</div>
+
+<!-- Footer injected by component.js -->
+
+<script src="js/contact.js"></script>
+<script src="js/component.js"></script>
+<script src="js/common.js"></script>
+</body>
+</html>

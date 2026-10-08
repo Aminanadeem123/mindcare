@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Progress - MindCare Hub</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/premium-theme.css">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght=300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/patient-dashboard.css">
+
+    <link rel="stylesheet" href="css/component.css">
+</head>
+<body class="theme-calm">
+<div class="mc-mouse-glow" data-mouse-glow aria-hidden="true"></div>
+<div class="main-content">
+<!-- Navbar injected by component.js -->
+
+<div class="container mt-4 mb-3">
+    <div class="d-flex justify-content-between align-items-center flex-wrap gap-3">
+        <div>
+            <h1 class="fw-800 mb-0">My <span class="text-gradient-accent">Progress</span></h1>
+            <p class="text-muted mb-0">Apni wellness journey ka overview.</p>
+        </div>
+        <div class="patient-selector">
+            <label class="small text-muted fw-semibold me-2">Viewing:</label>
+            <select id="patientPicker" onchange="loadDashboard()" style="border:none;background:transparent;font-weight:700;color:var(--accent-teal);outline:none;"></select>
+        </div>
+    </div>
+</div>
+
+<div class="container mb-5">
+    <div class="row g-4">
+        <!-- WELLNESS SCORE -->
+        <div class="col-lg-4 col-md-6">
+            <div class="glass text-center">
+                <h6 class="fw-bold mb-3"><i class="bi bi-heart-pulse me-2" style="color:var(--accent-teal)"></i> Wellness Score</h6>
+                <div class="score-ring-wrap">
+                    <svg width="160" height="160" viewBox="0 0 160 160">
+                        <circle cx="80" cy="80" r="68" fill="none" stroke="#e2e8f0" stroke-width="14"/>
+                        <circle id="scoreRing" cx="80" cy="80" r="68" fill="none" stroke="url(#scoreGrad)" stroke-width="14" stroke-linecap="round" stroke-dasharray="427" stroke-dashoffset="427" transform="rotate(-90 80 80)"/>
+                        <defs><linearGradient id="scoreGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0d9488"/><stop offset="100%" stop-color="#10b981"/></linearGradient></defs>
+                    </svg>
+                    <div class="score-num" id="scoreNum"></div>
+                    <div class="score-lbl">out of 100</div>
+                </div>
+                <p class="text-muted small mt-3 mb-0" id="scoreMsg">Assessment fill karein score dekhne ke liye.</p>
+            </div>
+        </div>
+
+        <!-- STRESS & SLEEP TRENDS -->
+        <div class="col-lg-4 col-md-6">
+            <div class="glass">
+                <h6 class="fw-bold mb-3"><i class="bi bi-graph-down-arrow me-2" style="color:#f43f5e"></i> Stress Trend</h6>
+                <div class="trend-box mb-3 d-flex justify-content-between align-items-center">
+                    <div><div class="trend-num" id="stressTrendNum"></div><div class="small text-muted">Latest Reading</div></div>
+                    <span id="stressTrendBadge" class="trend-up"></span>
+                </div>
+                <h6 class="fw-bold mb-3 mt-4"><i class="bi bi-moon-stars me-2" style="color:#6366f1"></i> Sleep Trend</h6>
+                <div class="trend-box d-flex justify-content-between align-items-center">
+                    <div><div class="trend-num" id="sleepTrendNum" style="font-size:1.3rem;"></div><div class="small text-muted">Latest Quality</div></div>
+                    <span id="sleepTrendBadge" class="trend-up"></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- COMPLETED ACTIVITIES -->
+        <div class="col-lg-4 col-md-6">
+            <div class="glass">
+                <h6 class="fw-bold mb-3"><i class="bi bi-check2-circle me-2" style="color:var(--accent-teal)"></i> Completed Activities</h6>
+                <div id="completedActivitiesList"><div class="empty-state py-3"><small>Koi activity track nahi hui abhi.</small></div></div>
+            </div>
+        </div>
+
+        <!-- PROGRESS GRAPH -->
+        <div class="col-lg-8 col-md-6">
+            <div class="glass">
+                <h6 class="fw-bold mb-3"><i class="bi bi-bar-chart-line me-2" style="color:var(--accent-teal)"></i> Progress Over Time</h6>
+                <canvas id="progressChart" height="110"></canvas>
+                <div id="chartEmptyState" class="empty-state" style="display:none;"><i class="bi bi-graph-up"></i><p>Abhi kaafi data nahi hai graph banane ke liye.<br><small>Kam az kam 2 assessments submit karein.</small></p></div>
+            </div>
+        </div>
+
+        <!-- DOCTOR RECOMMENDATIONS -->
+        <div class="col-lg-4 col-md-6">
+            <div class="glass">
+                <h6 class="fw-bold mb-3"><i class="bi bi-prescription2 me-2" style="color:var(--accent-teal)"></i> Doctor Recommendations</h6>
+                <div id="recommendationsList"><div class="empty-state py-3"><small>Koi recommendation nahi mili abhi.</small></div></div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- Footer injected by component.js -->
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+<script src="js/patient-dashboard.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/common.js"></script>
+<script src="js/component.js"></script>
+</body>
+</html>

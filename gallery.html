@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Relaxation Gallery ? MindCare Hub</title>
+  <meta name="description" content="Explore peaceful moments through beautiful nature scenes and calming visuals designed to help you relax and reduce stress.">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/component.css">
+  <link rel="stylesheet" href="css/gallery.css">
+
+
+  <link rel="stylesheet" href="css/gallery.css">
+
+
+</head>
+<body class="theme-calm">
+
+  <div class="rg-premium-banner">
+    <video class="rg-premium-banner__video" autoplay muted loop playsinline>
+      <source src="pictures/istockphoto-173045943-640_adpp_is.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <section class="rg-hero">
+    <div class="rg-hero__aurora"></div>
+    <div class="rg-hero__leaves">
+      <div class="rg-hero__leaf rg-hero__leaf--one"></div>
+      <div class="rg-hero__leaf rg-hero__leaf--two"></div>
+      <div class="rg-hero__leaf rg-hero__leaf--three"></div>
+      <div class="rg-hero__leaf rg-hero__leaf--four"></div>
+    </div>
+    <div class="rg-hero__particles">
+      <div class="rg-hero__particle"></div>
+      <div class="rg-hero__particle"></div>
+      <div class="rg-hero__particle"></div>
+      <div class="rg-hero__particle"></div>
+      <div class="rg-hero__particle"></div>
+      <div class="rg-hero__particle"></div>
+    </div>
+    <div class="rg-hero__content">
+      <div class="rg-hero__icon"><i class="bi bi-balloon" aria-hidden="true"></i></div>
+      <h1 class="rg-hero__title">Relaxation Gallery</h1>
+      <p class="rg-hero__subtitle">Pause, breathe, and let these calming scenes bring a moment of peace to your day.</p>
+    </div>
+  </section>
+
+  <div class="rg-recommend" data-rg-recommend>
+    <i class="bi bi-stars" aria-hidden="true"></i>
+    <span data-rg-recommend-text></span>
+  </div>
+
+  <section class="rg-controls" style="max-width:1100px;margin:0 auto;padding:0 var(--mc-space-md);">
+    <div class="rg-search">
+      <i class="bi bi-search rg-search__icon" aria-hidden="true"></i>
+      <input type="search" class="rg-search__input" placeholder="Search scenes..." data-rg-search aria-label="Search relaxation scenes">
+    </div>
+    <div class="rg-filters">
+      <button type="button" class="rg-filter is-active" data-rg-filter="All">All</button>
+      <button type="button" class="rg-filter" data-rg-filter="Favorites"><i class="bi bi-heart-fill" aria-hidden="true"></i> Favorites</button>
+      <button type="button" class="rg-filter" data-rg-filter="Ocean">Ocean</button>
+      <button type="button" class="rg-filter" data-rg-filter="Nature">Nature</button>
+      <button type="button" class="rg-filter" data-rg-filter="Forest">Forest</button>
+      <button type="button" class="rg-filter" data-rg-filter="Mindfulness">Mindfulness</button>
+      <button type="button" class="rg-filter" data-rg-filter="Flowers">Flowers</button>
+      <button type="button" class="rg-filter" data-rg-filter="Sunset">Sunset</button>
+      <button type="button" class="rg-filter" data-rg-filter="Mountains">Mountains</button>
+    </div>
+  </section>
+
+  <section class="rg-gallery" data-rg-gallery style="max-width:1100px;margin:var(--mc-space-lg) auto 0;padding:0 var(--mc-space-md);"></section>
+
+  <div class="rg-quick" style="max-width:1100px;margin:0 auto;padding:var(--mc-space-lg) var(--mc-space-md) 0;">
+    <a href="relaxation 1.html" class="rg-quick__btn"><i class="bi bi-headphones" aria-hidden="true"></i> Audio Guides</a>
+    <a href="journal.html" class="rg-quick__btn"><i class="bi bi-journal-text" aria-hidden="true"></i> Journal</a>
+    <a href="tracker.html" class="rg-quick__btn"><i class="bi bi-clipboard2-pulse" aria-hidden="true"></i> Mood Tracker</a>
+  </div>
+
+  <section class="rg-feedback" style="max-width:40rem;margin:var(--mc-space-xl) auto 0;padding:0 var(--mc-space-md);">
+    <h2 class="rg-section-title">How are you feeling after browsing?</h2>
+    <div class="rg-feedback__options">
+      <button type="button" class="rg-feedback__option" data-rg-feedback="amazing"><span aria-hidden="true">&#129321;</span> Amazing</button>
+      <button type="button" class="rg-feedback__option" data-rg-feedback="good"><span aria-hidden="true">&#128522;</span> Good</button>
+      <button type="button" class="rg-feedback__option" data-rg-feedback="okay"><span aria-hidden="true">&#128528;</span> Okay</button>
+      <button type="button" class="rg-feedback__option" data-rg-feedback="meh"><span aria-hidden="true">&#128548;</span> Not great</button>
+    </div>
+    <p class="rg-feedback__thanks" data-rg-feedback-thanks>Thanks for sharing! We hope this gallery brings you more calm.</p>
+  </section>
+
+  <div class="rg-lightbox" data-rg-lightbox>
+    <div class="rg-lightbox__frame">
+      <img class="rg-lightbox__video" data-rg-lightbox-img src="" alt="">
+      <div class="rg-lightbox__fallback"></div>
+      <div class="rg-lightbox__info">
+        <h3 class="rg-lightbox__title" data-rg-lightbox-title></h3>
+        <p class="rg-lightbox__quote" data-rg-lightbox-quote></p>
+      </div>
+    </div>
+    <button type="button" class="rg-lightbox__close" data-rg-close aria-label="Close lightbox"><i class="bi bi-x-lg" aria-hidden="true"></i></button>
+    <button type="button" class="rg-lightbox__nav rg-lightbox__prev" data-rg-prev aria-label="Previous scene"><i class="bi bi-chevron-left" aria-hidden="true"></i></button>
+    <button type="button" class="rg-lightbox__nav rg-lightbox__next" data-rg-next aria-label="Next scene"><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
+  </div>
+
+  </div>
+
+  <script src="js/gallery.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/component.js"></script>
+<script src="js/common.js"></script>
+</body>
+</html>

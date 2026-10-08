@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Mood Tracker | MindCare Hub</title>
+<meta name="description" content="Analyze your facial expressions privately using AI-powered emotion recognition, part of MindCare Hub.">
+ 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+ 
+<link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/component.css">
+  <link rel="stylesheet" href="css/tracker.css">
+
+
+</head>
+<body>
+ 
+<div class="mc-wrap">
+ 
+    <div class="mc-tracker-hero">
+        <div class="mc-tracker-hero__icon"><i class="bi bi-stars"></i></div>
+        <h1>AI Wellness Check-In</h1>
+        <p id="heroSub">A guided, private moment to understand how you're really doing. Everything runs in your browser — nothing is ever uploaded.</p>
+    </div>
+
+    <div class="mc-steps" id="stepIndicator">
+        <div class="mc-step active" data-step="1"><span class="mc-step__num">1</span><span class="mc-step__label">Scan</span></div>
+        <div class="mc-step-line"></div>
+        <div class="mc-step" data-step="2"><span class="mc-step__num">2</span><span class="mc-step__label">Analyze</span></div>
+        <div class="mc-step-line"></div>
+        <div class="mc-step" data-step="3"><span class="mc-step__num">3</span><span class="mc-step__label">Confirm</span></div>
+    </div>
+ 
+    <div id="errorBanner" class="mc-alert">
+        <i class="bi bi-exclamation-triangle-fill"></i>
+        <span id="errorText"></span>
+    </div>
+ 
+    <div class="mc-glass-card mc-stage-card" id="stageCard">
+        <div class="mc-stage" id="stage">
+            <video id="video" autoplay muted playsinline class="hidden-video"></video>
+ 
+            <div class="mc-face-guide" id="faceGuide"></div>
+            <div class="mc-status-pill" id="statusPill" style="display:none;"></div>
+            <div class="mc-helper-text" id="helperText">
+                Position your face inside the frame.<br>Only one face should be visible.
+            </div>
+            <div class="mc-scan-indicator" id="scanIndicator">
+                Reading<span class="mc-dot">.</span><span class="mc-dot">.</span><span class="mc-dot">.</span>
+            </div>
+
+            <div class="mc-scan-overlay" id="scanOverlay">
+                <div class="mc-scan-line"></div>
+                <div class="mc-scan-orb"><i class="bi bi-stars"></i></div>
+                <div class="mc-scan-message" id="scanMessage">Analyzing facial cues...</div>
+                <div class="mc-scan-progress"><div class="mc-scan-progress__fill" id="scanProgressFill"></div></div>
+            </div>
+ 
+            <div class="mc-stage-placeholder" id="stagePlaceholder">
+                <div class="mc-placeholder-title" id="placeholderTitle">Camera Off</div>
+                <div class="mc-placeholder-sub" id="placeholderSub">Tap "Begin Check-In" when you're ready.</div>
+            </div>
+        </div>
+ 
+        <div class="mc-controls">
+            <button class="mc-btn mc-btn--primary" id="startBtn">Begin Check-In</button>
+            <button class="mc-btn mc-btn--ghost" id="stopBtn" disabled>Cancel</button>
+        </div>
+    </div>
+
+    <div class="mc-glass-card mc-confirm-card" id="confirmCard">
+        <div class="mc-confirm-head">
+            <h2>How does this feel, really?</h2>
+            <p>Facial cues aren't always the full picture — confirm what fits you best right now.</p>
+            <div class="mc-confirm-suggested" id="confirmSuggested"><i class="bi bi-magic"></i> <span id="confirmSuggestedText">Suggested from your scan</span></div>
+        </div>
+        <div class="mc-mood-grid" id="moodGrid"></div>
+    </div>
+ 
+    <div class="mc-result-card" id="resultCard">
+        <div class="mc-result-top">
+            <div class="mc-result-mood"><i id="resultIcon" class="bi bi-emoji-smile"></i><span id="resultMoodText"></span></div>
+            <div class="mc-result-status-badge" id="resultStatusBadge">Neutral</div>
+        </div>
+        <div class="mc-result-grid">
+            <div class="mc-result-stat">
+                <div class="mc-result-stat__label">AI Confidence</div>
+                <div class="mc-result-stat__value" id="resultConfidence">0%</div>
+                <div class="mc-confidence-track"><div class="mc-confidence-fill" id="confidenceBar" style="width:0%;"></div></div>
+            </div>
+            <div class="mc-result-stat">
+                <div class="mc-result-stat__label">Focus Areas</div>
+                <div class="mc-result-stat__value" id="resultStatusText" style="font-size:0.85rem;"></div>
+            </div>
+            <div class="mc-result-stat">
+                <div class="mc-result-stat__label">Logged At</div>
+                <div class="mc-result-stat__value" id="resultTime"></div>
+            </div>
+        </div>
+        <div class="mc-controls" style="margin-top: var(--mc-space-sm);">
+            <button class="mc-btn mc-btn--ghost" id="retakeBtn"><i class="bi bi-arrow-counterclockwise"></i> Scan Again</button>
+            <button class="mc-btn-save" id="saveBtn" style="margin-top:0; width:auto; padding:0.85rem 1.9rem;">Save &amp; Continue</button>
+        </div>
+    </div>
+ 
+    <div class="mc-glass-card" style="text-align:left;">
+        <div class="mc-history-title">Recent Mood History</div>
+        <div id="historyEmpty" class="mc-history-empty">
+            <i class="bi bi-journal-heart"></i>
+            No mood history available.
+        </div>
+        <div id="historyList" class="mc-history-list"></div>
+    </div>
+ 
+</div>
+ 
+<script src="https://cdn.jsdelivr.net/npm/face-api.js@0.22.2/dist/face-api.min.js"></script>
+<script src="js/tracker.js"></script>
+ 
+<script src="js/component.js"></script>
+<script src="js/common.js"></script>
+</body>
+</html>

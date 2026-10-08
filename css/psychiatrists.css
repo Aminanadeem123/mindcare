@@ -1,0 +1,94 @@
+.mc-psychiatrists-hero { padding: 7rem 1.5rem 3rem; text-align: center; background: linear-gradient(145deg, var(--mc-morning-mint), var(--mc-pale-aqua)); position: relative; overflow: hidden; }
+    .mc-psychiatrists-hero__title { font-family: var(--mc-font-display); font-weight: 800; font-size: clamp(1.8rem, 4vw, 2.8rem); color: var(--mc-text-primary); margin-bottom: 0.75rem; }
+    .mc-psychiatrists-hero__subtitle { font-size: var(--mc-fs-md); color: var(--mc-text-secondary); max-width: 52ch; margin: 0 auto; }
+
+    .mc-psychiatrists-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: var(--mc-space-lg); max-width: 1200px; margin: 0 auto; padding: var(--mc-space-xl) var(--mc-space-md); }
+
+    .doctor-card { background: var(--mc-glass-bg-strong); backdrop-filter: blur(var(--mc-blur-md)) saturate(140%); border: 1px solid var(--mc-glass-border); border-radius: var(--mc-radius-lg); padding: var(--mc-space-md); text-align: center; transition: transform var(--mc-dur-fast) var(--mc-ease-soft), box-shadow var(--mc-dur-fast) var(--mc-ease-soft); }
+    .doctor-card:hover { transform: translateY(-6px); box-shadow: var(--mc-shadow-md), 0 0 30px var(--mc-theme-glow); }
+    .doctor-card img { width: 100%; height: 260px; object-fit: cover; object-position: top center; border-radius: var(--mc-radius-md); margin-bottom: var(--mc-space-sm); }
+    .doc-name { font-family: var(--mc-font-display); font-weight: 700; font-size: var(--mc-fs-md); color: var(--mc-text-primary); margin-bottom: 0.3rem; }
+    .doc-specialty { font-size: var(--mc-fs-sm); color: var(--mc-theme-accent-dark, var(--mc-accent-primary-dark)); font-weight: 600; margin-bottom: 0.5rem; }
+    .doc-desc { font-size: var(--mc-fs-sm); color: var(--mc-text-secondary); line-height: var(--mc-lh-normal); margin-bottom: var(--mc-space-sm); }
+    .btn-appointment { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.65rem 1.4rem; border-radius: var(--mc-radius-pill); background: linear-gradient(135deg, var(--mc-theme-accent), var(--mc-theme-accent-dark, var(--mc-accent-primary-dark))); color: var(--mc-text-inverse); font-family: var(--mc-font-display); font-weight: 600; font-size: var(--mc-fs-sm); border: none; cursor: pointer; transition: transform var(--mc-dur-fast) var(--mc-ease-soft), box-shadow var(--mc-dur-fast) var(--mc-ease-soft); }
+    .btn-appointment:hover { transform: translateY(-2px); box-shadow: var(--mc-shadow-sm), 0 0 20px var(--mc-theme-glow); }
+
+    .mc-modal-overlay { position: fixed; inset: 0; z-index: 500; background: rgba(60,74,65,0.32); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); align-items: center; justify-content: center; padding: var(--mc-space-md); opacity: 0; pointer-events: none; transition: opacity var(--mc-dur-fast) var(--mc-ease-soft); }
+    .mc-modal-overlay.is-open { opacity: 1; pointer-events: auto; }
+    .mc-modal { width: min(500px, 100%); max-height: 86vh; overflow-y: auto; padding: var(--mc-space-lg); border-radius: var(--mc-radius-lg); background: var(--mc-glass-bg-strong); backdrop-filter: blur(var(--mc-blur-md)) saturate(140%); border: 1px solid var(--mc-glass-border); box-shadow: var(--mc-shadow-lg); }
+    .mc-modal h2 { font-family: var(--mc-font-display); font-weight: 700; font-size: var(--mc-fs-md); color: var(--mc-text-primary); margin-bottom: var(--mc-space-md); }
+    .mc-modal label { display: block; font-size: var(--mc-fs-xs); color: var(--mc-text-muted); text-transform: uppercase; letter-spacing: var(--mc-ls-wide); margin-bottom: 0.3rem; margin-top: 0.5rem; }
+    .mc-modal input, .mc-modal select { width: 100%; padding: 0.65rem 0.85rem; border-radius: var(--mc-radius-sm); border: 1px solid var(--mc-glass-border); background: var(--mc-glass-bg-faint); color: var(--mc-text-primary); font-size: var(--mc-fs-base); font-family: var(--mc-font-body); }
+    .mc-modal input:focus-visible, .mc-modal select:focus-visible { outline: 2px solid var(--mc-theme-accent); outline-offset: 1px; }
+    .mc-modal__actions { display: flex; justify-content: flex-end; gap: 0.6rem; margin-top: var(--mc-space-md); }
+    .mc-modal__btn { padding: 0.6rem 1.2rem; border-radius: var(--mc-radius-pill); font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: transform var(--mc-dur-fast) var(--mc-ease-soft); }
+    .mc-modal__btn--primary { background: linear-gradient(145deg, var(--mc-theme-accent), var(--mc-theme-accent-dark, var(--mc-accent-primary-dark))); color: var(--mc-text-inverse); border: none; }
+    .mc-modal__btn--ghost { background: var(--mc-glass-bg-faint); color: var(--mc-text-secondary); border: 1px solid var(--mc-glass-border); }
+    .mc-modal__btn:hover { transform: translateY(-1px); }
+    .mc-modal .close-btn { position: absolute; top: 1rem; right: 1rem; background: none; border: none; font-size: 1.5rem; color: var(--mc-text-muted); cursor: pointer; }
+
+    .mc-toast { padding: 0.75rem 1.2rem; border-radius: var(--mc-radius-sm); font-size: var(--mc-fs-sm); font-weight: 500; margin-bottom: 1rem; animation: fadeUp 0.3s ease both; }
+    .mc-toast--success { background: rgba(34,197,94,0.12); color: #15803d; border: 1px solid rgba(34,197,94,0.25); }
+    .mc-toast--error { background: rgba(239,68,68,0.10); color: #b91c1c; border: 1px solid rgba(239,68,68,0.2); }
+
+    .mc-confirm-overlay { position: fixed; inset: 0; z-index: 600; display: none; align-items: center; justify-content: center; background: rgba(60,74,65,0.32); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); padding: var(--mc-space-md); }
+    .mc-confirm-overlay.is-open { display: flex; }
+    .mc-confirm { background: var(--mc-glass-bg-strong); border-radius: var(--mc-radius-lg); padding: 2.5rem 2rem; text-align: center; max-width: 380px; width: 100%; box-shadow: var(--mc-shadow-lg); animation: scaleIn 0.3s ease both; }
+    .mc-confirm__icon { font-size: 3rem; color: #22c55e; margin-bottom: 1rem; }
+    .mc-confirm__title { font-family: var(--mc-font-display); font-weight: 700; font-size: var(--mc-fs-md); color: var(--mc-text-primary); margin-bottom: 0.5rem; }
+    .mc-confirm__text { font-size: var(--mc-fs-sm); color: var(--mc-text-secondary); margin-bottom: 1.5rem; }
+
+    @media (max-width: 640px) {
+      .mc-psychiatrists-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 1024px) {
+      .mc-psychiatrists-hero { padding: 5rem 1.5rem 2.5rem; }
+      .mc-psychiatrists-grid { gap: var(--mc-space-md); padding: var(--mc-space-lg) var(--mc-space-sm); }
+      .doctor-card { padding: var(--mc-space-sm); }
+      .doctor-card img { height: 220px; }
+    }
+
+    @media (max-width: 768px) {
+      .mc-psychiatrists-hero { padding: 4rem 1rem 2rem; }
+      .mc-psychiatrists-hero__title { font-size: clamp(1.5rem, 4vw, 2.2rem); }
+      .mc-psychiatrists-hero__subtitle { font-size: var(--mc-fs-sm); }
+      .mc-psychiatrists-grid { gap: var(--mc-space-sm); padding: var(--mc-space-md) var(--mc-space-sm); }
+      .doctor-card { padding: var(--mc-space-xs); border-radius: var(--mc-radius-md); }
+      .doctor-card img { height: 180px; border-radius: var(--mc-radius-sm); }
+      .doc-name { font-size: var(--mc-fs-sm); }
+      .doc-specialty { font-size: var(--mc-fs-xs); }
+      .doc-desc { font-size: var(--mc-fs-xs); line-height: 1.5; }
+      .btn-appointment { padding: 0.5rem 1rem; font-size: var(--mc-fs-xs); }
+      .mc-modal { padding: var(--mc-space-md); }
+      .mc-modal h2 { font-size: var(--mc-fs-sm); }
+    }
+
+    @media (max-width: 640px) {
+      .mc-psychiatrists-hero { padding: 3.5rem 0.75rem 1.5rem; }
+      .mc-psychiatrists-hero__title { font-size: 1.4rem; }
+      .mc-psychiatrists-hero__subtitle { font-size: var(--mc-fs-xs); max-width: 100%; }
+      .mc-psychiatrists-grid { padding: var(--mc-space-sm) var(--mc-space-xs); }
+      .doctor-card { padding: 12px; }
+      .doctor-card img { height: 160px; }
+      .doc-name { font-size: 0.9rem; }
+      .doc-specialty { font-size: 0.78rem; }
+      .doc-desc { font-size: 0.75rem; margin-bottom: var(--mc-space-xs); }
+      .btn-appointment { width: 100%; justify-content: center; padding: 0.5rem; font-size: 0.8rem; }
+      .mc-modal { padding: var(--mc-space-sm); border-radius: var(--mc-radius-md); max-height: 90vh; }
+      .mc-modal input, .mc-modal select { padding: 0.55rem 0.7rem; font-size: 0.9rem; }
+      .mc-modal__btn { padding: 0.5rem 1rem; font-size: 0.85rem; }
+      .mc-confirm { padding: 1.5rem 1.2rem; }
+      .mc-confirm__icon { font-size: 2.2rem; }
+      .mc-confirm__title { font-size: var(--mc-fs-sm); }
+    }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

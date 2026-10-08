@@ -1,0 +1,403 @@
+/* ==========================================================================
+   MindCare Hub - Global Design System
+   Single source of truth: tokens, reset, keyframes, themes, fonts.
+   Load on EVERY page via: <link rel="stylesheet" href="css/global.css">
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap');
+
+/* ==========================================================================
+   1. DESIGN TOKENS
+   ========================================================================== */
+:root {
+
+  /* ---- Color System: Emotional Palette ---- */
+  --mc-morning-mint:   #E6F4EC;
+  --mc-soft-sage:      #DEE9DA;
+  --mc-seafoam:        #D9F0E6;
+  --mc-cloud-white:    #FCFDFB;
+  --mc-warm-white:     #FBF8F2;
+  --mc-pale-aqua:      #E2F2F0;
+  --mc-sky-mist:       #E8EFF7;
+  --mc-soft-lavender:  #EEEAF6;
+  --mc-cream:          #F9F3E8;
+  --mc-light-sand:     #F2EADB;
+  --mc-muted-olive:    #A7AC8D;
+
+  /* ---- Text ---- */
+  --mc-text-primary:   #3C4A41;
+  --mc-text-secondary: #66756A;
+  --mc-text-muted:     #8C9689;
+  --mc-text-inverse:   #FBFCF9;
+
+  /* ---- Glass Surfaces ---- */
+  --mc-glass-opacity-low:  0.22;
+  --mc-glass-opacity-mid:  0.42;
+  --mc-glass-opacity-high: 0.68;
+  --mc-glass-bg:        rgba(255, 255, 255, var(--mc-glass-opacity-mid));
+  --mc-glass-bg-strong: rgba(255, 255, 255, var(--mc-glass-opacity-high));
+  --mc-glass-bg-faint:  rgba(255, 255, 255, var(--mc-glass-opacity-low));
+  --mc-glass-border:    rgba(255, 255, 255, 0.55);
+  --mc-glass-border-soft: rgba(255, 255, 255, 0.35);
+
+  /* ---- Accent / Glow ---- */
+  --mc-accent-primary:      #8FBFA4;
+  --mc-accent-primary-dark: #6FA487;
+  --mc-accent-secondary:    #B6A7D8;
+  --mc-accent-gold:         #E8C787;
+
+  --mc-glow-mint:     rgba(159, 210, 181, 0.45);
+  --mc-glow-lavender: rgba(190, 173, 222, 0.40);
+  --mc-glow-aqua:     rgba(140, 205, 205, 0.40);
+  --mc-glow-sand:     rgba(222, 192, 140, 0.35);
+  --mc-glow-gold:     rgba(236, 200, 129, 0.55);
+
+  /* ---- Theme (overridable per mood) ---- */
+  --mc-theme-accent: var(--mc-accent-primary);
+  --mc-theme-glow:   var(--mc-glow-mint);
+  --mc-theme-bg-a:   var(--mc-morning-mint);
+  --mc-theme-bg-b:   var(--mc-pale-aqua);
+  --mc-theme-bg-c:   var(--mc-soft-lavender);
+
+  /* ---- Spacing ---- */
+  --mc-space-3xs: 0.25rem;
+  --mc-space-2xs: 0.5rem;
+  --mc-space-xs:  0.75rem;
+  --mc-space-sm:  1.125rem;
+  --mc-space-md:  1.75rem;
+  --mc-space-lg:  2.75rem;
+  --mc-space-xl:  4.5rem;
+  --mc-space-2xl: 7rem;
+  --mc-space-3xl: 10rem;
+
+  /* ---- Radius ---- */
+  --mc-radius-sm:   14px;
+  --mc-radius-md:   22px;
+  --mc-radius-lg:   34px;
+  --mc-radius-xl:   52px;
+  --mc-radius-pill: 999px;
+  --mc-blob-1: 42% 58% 65% 35% / 45% 40% 60% 55%;
+  --mc-blob-2: 62% 38% 45% 55% / 55% 62% 38% 45%;
+  --mc-blob-3: 48% 52% 36% 64% / 64% 44% 56% 36%;
+  --mc-blob-4: 55% 45% 58% 42% / 40% 55% 45% 60%;
+
+  /* ---- Typography ---- */
+  --mc-font-display: 'Plus Jakarta Sans', 'Inter', sans-serif;
+  --mc-font-body:    'Inter', 'Plus Jakarta Sans', sans-serif;
+
+  --mc-fs-xs:  0.8125rem;
+  --mc-fs-sm:  0.9375rem;
+  --mc-fs-base: 1.0625rem;
+  --mc-fs-md:  1.3125rem;
+  --mc-fs-lg:  1.85rem;
+  --mc-fs-xl:  2.75rem;
+  --mc-fs-2xl: 3.75rem;
+  --mc-fs-3xl: 4.75rem;
+
+  --mc-lh-tight:  1.15;
+  --mc-lh-snug:   1.4;
+  --mc-lh-normal: 1.65;
+  --mc-lh-loose:  1.9;
+
+  --mc-ls-tight: -0.02em;
+  --mc-ls-normal: 0em;
+  --mc-ls-wide:  0.05em;
+  --mc-ls-wider: 0.12em;
+
+  /* ---- Shadows ---- */
+  --mc-shadow-xs: 0 2px 10px rgba(110, 130, 115, 0.08);
+  --mc-shadow-sm: 0 6px 20px rgba(110, 130, 115, 0.10);
+  --mc-shadow-md: 0 16px 48px rgba(100, 122, 108, 0.14);
+  --mc-shadow-lg: 0 30px 80px rgba(94, 116, 100, 0.18);
+  --mc-shadow-inset: inset 0 1px 1px rgba(255, 255, 255, 0.6);
+  --mc-shadow-glow-mint: 0 0 46px var(--mc-glow-mint);
+  --mc-shadow-glow-lav:  0 0 46px var(--mc-glow-lavender);
+  --mc-shadow-glow-gold: 0 0 55px var(--mc-glow-gold);
+
+  /* ---- Blur ---- */
+  --mc-blur-sm: 10px;
+  --mc-blur-md: 20px;
+  --mc-blur-lg: 36px;
+  --mc-blur-xl: 70px;
+
+  /* ---- Z-Index Layers ---- */
+  --mc-z-bg:      0;
+  --mc-z-decor:   2;
+  --mc-z-content: 10;
+  --mc-z-illustration: 12;
+  --mc-z-nav:     100;
+  --mc-z-popup:   200;
+
+  /* ---- Motion ---- */
+  --mc-dur-fast:    0.28s;
+  --mc-dur-normal:  0.55s;
+  --mc-dur-slow:    1.4s;
+  --mc-dur-slower:  3.2s;
+  --mc-dur-ambient: 20s;
+  --mc-dur-ambient-slow: 34s;
+  --mc-ease-soft:   cubic-bezier(0.22, 1, 0.36, 1);
+  --mc-ease-gentle: cubic-bezier(0.4, 0, 0.2, 1);
+  --mc-ease-breath: cubic-bezier(0.45, 0, 0.55, 1);
+}
+
+/* ==========================================================================
+   2. MOOD THEMES
+   ========================================================================== */
+body.theme-happy{
+  --mc-theme-bg-a:#FFF8D6;
+  --mc-theme-bg-b:#FFE9A8;
+  --mc-theme-bg-c:#FFF4D4;
+  --mc-theme-accent:#E8C787;
+  --mc-theme-glow:rgba(236,200,129,.45);
+}
+
+body.theme-calm{
+  --mc-theme-bg-a:#E6F4EC;
+  --mc-theme-bg-b:#D9F0E6;
+  --mc-theme-bg-c:#F8FCF9;
+  --mc-theme-accent:#8FBFA4;
+  --mc-theme-glow:rgba(159,210,181,.45);
+}
+
+body.theme-peaceful{
+  --mc-theme-bg-a:#EAF8F0;
+  --mc-theme-bg-b:#E2F2F0;
+  --mc-theme-bg-c:#F9FCFB;
+  --mc-theme-accent:#7FAF94;
+  --mc-theme-glow:rgba(143,191,164,.40);
+}
+
+body.theme-focused{
+  --mc-theme-bg-a:#EAF2FB;
+  --mc-theme-bg-b:#DCEBFA;
+  --mc-theme-bg-c:#F5F9FD;
+  --mc-theme-accent:#7AA7D9;
+  --mc-theme-glow:rgba(122,167,217,.40);
+}
+
+body.theme-hopeful{
+  --mc-theme-bg-a:#F7F0FB;
+  --mc-theme-bg-b:#EEEAF6;
+  --mc-theme-bg-c:#FCFAFD;
+  --mc-theme-accent:#B6A7D8;
+  --mc-theme-glow:rgba(182,167,216,.40);
+}
+
+body.theme-tired{
+  --mc-theme-bg-a:#F3F3F3;
+  --mc-theme-bg-b:#ECECEC;
+  --mc-theme-bg-c:#FAFAFA;
+  --mc-theme-accent:#A8AAA7;
+  --mc-theme-glow:rgba(180,180,180,.35);
+}
+
+body.theme-anxious{
+  --mc-theme-bg-a:#F2EDFA;
+  --mc-theme-bg-b:#E9E2F8;
+  --mc-theme-bg-c:#FBF9FE;
+  --mc-theme-accent:#9B86C8;
+  --mc-theme-glow:rgba(155,134,200,.40);
+}
+
+/* ==========================================================================
+   3. RESET & BASE
+   ========================================================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  font-family: var(--mc-font-body);
+  font-size: var(--mc-fs-base);
+  line-height: var(--mc-lh-normal);
+  color: var(--mc-text-primary);
+  font-weight: 400;
+  letter-spacing: var(--mc-ls-normal);
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  background:
+    radial-gradient(120% 90% at 12% -10%, var(--mc-theme-bg-a) 0%, transparent 55%),
+    radial-gradient(100% 80% at 90% 5%, var(--mc-theme-bg-b) 0%, transparent 50%),
+    radial-gradient(90% 70% at 20% 40%, var(--mc-theme-bg-c) 0%, transparent 55%),
+    radial-gradient(100% 90% at 85% 55%, var(--mc-theme-bg-a) 0%, transparent 55%),
+    radial-gradient(110% 80% at 30% 85%, var(--mc-theme-bg-b) 0%, transparent 55%),
+    radial-gradient(100% 80% at 95% 100%, var(--mc-theme-bg-c) 0%, transparent 50%),
+    linear-gradient(180deg, var(--mc-theme-bg-a) 0%, var(--mc-theme-bg-c) 100%);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  transition: background 1.5s ease, color .5s ease;
+}
+
+img { max-width: 100%; display: block; }
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: inherit;
+}
+
+ul, ol { list-style: none; }
+
+input {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--mc-font-display);
+  font-weight: 700;
+  letter-spacing: var(--mc-ls-tight);
+  line-height: var(--mc-lh-tight);
+  color: var(--mc-text-primary);
+}
+
+p { color: var(--mc-text-secondary); }
+
+/* Global accessible focus ring */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 2.5px solid var(--mc-accent-primary-dark);
+  outline-offset: 4px;
+  border-radius: var(--mc-radius-sm);
+}
+
+/* Selection color */
+::selection {
+  background: rgba(143, 191, 164, 0.22);
+  color: var(--mc-text-primary);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: rgba(248, 250, 252, 0.7); }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--mc-accent-primary), var(--mc-accent-secondary));
+  border-radius: 999px;
+}
+
+/* Utility: visually hidden but accessible to screen readers */
+.mc-visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* ==========================================================================
+   4. KEYFRAMES / MOTION SYSTEM
+   ========================================================================== */
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0) translateX(0); }
+  50%      { transform: translateY(-16px) translateX(6px); }
+}
+
+@keyframes floatMedium {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50%      { transform: translateY(-10px) rotate(2deg); }
+}
+
+@keyframes floatLeaf {
+  0%   { transform: translateY(0) translateX(0) rotate(0deg); opacity: 0.85; }
+  50%  { transform: translateY(-22px) translateX(14px) rotate(8deg); opacity: 1; }
+  100% { transform: translateY(0) translateX(0) rotate(0deg); opacity: 0.85; }
+}
+
+@keyframes breathingGlow {
+  0%, 100% { opacity: 0.55; transform: scale(1); }
+  50%      { opacity: 0.9;  transform: scale(1.08); }
+}
+
+@keyframes auroraShift {
+  0%   { transform: translateX(-6%) translateY(0) scale(1); opacity: 0.55; }
+  50%  { transform: translateX(6%) translateY(-4%) scale(1.06); opacity: 0.8; }
+  100% { transform: translateX(-6%) translateY(0) scale(1); opacity: 0.55; }
+}
+
+@keyframes mistMove {
+  0%   { transform: translateX(-4%); opacity: 0.35; }
+  50%  { transform: translateX(4%); opacity: 0.6; }
+  100% { transform: translateX(-4%); opacity: 0.35; }
+}
+
+@keyframes particleFloat {
+  0%   { transform: translateY(0) translateX(0); opacity: 0; }
+  15%  { opacity: 0.8; }
+  85%  { opacity: 0.5; }
+  100% { transform: translateY(-120px) translateX(18px); opacity: 0; }
+}
+
+@keyframes waterRipple {
+  0%   { transform: scale(0.85); opacity: 0.5; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+
+@keyframes lightPulse {
+  0%, 100% { opacity: 0.4; }
+  50%      { opacity: 0.85; }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(26px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeLeft {
+  from { opacity: 0; transform: translateX(-24px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeRight {
+  from { opacity: 0; transform: translateX(24px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.92); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes glassShimmer {
+  0%   { background-position: -150% 0; }
+  100% { background-position: 150% 0; }
+}
+
+@keyframes goldenBubble {
+  0%, 100% { transform: translateY(0) scale(1); box-shadow: var(--mc-shadow-glow-gold); }
+  50%      { transform: translateY(-14px) scale(1.05); box-shadow: 0 0 70px var(--mc-glow-gold); }
+}
+
+@keyframes sunlightShift {
+  0%, 100% { opacity: 0.5; transform: translateY(0); }
+  50%      { opacity: 0.85; transform: translateY(-8px); }
+}

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us | MindCare Hub — Your Safe Space</title>
+<meta name="description" content="MindCare Hub's story — an interactive, emotional journey through mood tracking, healing, breathing, and growth.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css">
+<link rel="stylesheet" href="css/global.css">
+<link rel="stylesheet" href="css/component.css">
+<link rel="stylesheet" href="css/about.css">
+</head>
+<body>
+
+<!-- Mouse Glow -->
+<div class="mc-mouse-glow" data-mouse-glow aria-hidden="true"></div>
+
+<main class="mc-main">
+
+  <!-- HERO -->
+  <section class="mc-about-hero" id="home">
+    <div class="mc-about-hero__bg" aria-hidden="true"></div>
+    <div class="mc-about-hero__aurora" aria-hidden="true">
+      <div class="mc-about-hero__band mc-about-hero__band--one"></div>
+      <div class="mc-about-hero__band mc-about-hero__band--two"></div>
+    </div>
+    <div class="mc-about-hero__glow" aria-hidden="true"></div>
+    <div class="mc-about-hero__row">
+      <div class="mc-about-hero__content">
+        <div class="mc-about-hero__headline" data-typewriter data-text="Welcome to MindCare Hub">Welcome to MindCare Hub<span class="cursor"></span></div>
+        <div class="mc-about-hero__lines">
+          <p>A calm digital space dedicated to helping you understand, track, and nurture your emotional wellbeing.</p>
+          <p>One gentle step at a time.</p>
+        </div>
+        <div class="mc-about-hero__ctas">
+          <a href="patient-assessment.html" class="mc-about__btn mc-about__btn--primary">Start Your Journey <i class="bi bi-arrow-right"></i></a>
+          <a href="activity.html" class="mc-about__btn mc-about__btn--ghost">Explore Activities</a>
+        </div>
+        <p class="mc-about-hero__trust"><i class="bi bi-shield-check"></i> Trusted by students, parents, and professionals</p>
+      </div>
+      <div class="mc-about-hero__art" aria-hidden="true">
+        <div class="mc-about-hero__blob"></div>
+        <div class="mc-about-hero__bubble mc-about-hero__bubble--a"></div>
+        <div class="mc-about-hero__bubble mc-about-hero__bubble--b"></div>
+        <div class="mc-about-hero__bubble mc-about-hero__bubble--c"></div>
+        <div class="mc-about-hero__mouse-glow"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEELINGS -->
+  <section data-reveal id="feelings">
+    <div class="mc-about__header">
+      <span class="mc-about__eyebrow"><i class="bi bi-heart-pulse"></i> Emotional Check-In</span>
+      <h2 class="mc-about__title">How Are You Feeling?</h2>
+      <p class="mc-about__subtitle">Tap the bubble that matches your mood right now. There is no wrong answer.</p>
+    </div>
+    <div class="mc-feelings__grid">
+      <button class="mc-feelings__bubble" data-feeling="happy" aria-label="Happy"><span class="mc-feelings__icon"><i class="bi bi-emoji-smile"></i></span><span class="mc-feelings__label">Happy</span></button>
+      <button class="mc-feelings__bubble" data-feeling="calm" aria-label="Calm"><span class="mc-feelings__icon"><i class="bi bi-emoji-sunglasses"></i></span><span class="mc-feelings__label">Calm</span></button>
+      <button class="mc-feelings__bubble" data-feeling="sad" aria-label="Sad"><span class="mc-feelings__icon"><i class="bi bi-emoji-frown"></i></span><span class="mc-feelings__label">Sad</span></button>
+      <button class="mc-feelings__bubble" data-feeling="stressed" aria-label="Stressed"><span class="mc-feelings__icon"><i class="bi bi-emoji-dizzy"></i></span><span class="mc-feelings__label">Stressed</span></button>
+      <button class="mc-feelings__bubble" data-feeling="angry" aria-label="Angry"><span class="mc-feelings__icon"><i class="bi bi-emoji-angry"></i></span><span class="mc-feelings__label">Angry</span></button>
+      <button class="mc-feelings__bubble" data-feeling="tired" aria-label="Tired"><span class="mc-feelings__icon"><i class="bi bi-moon-stars"></i></span><span class="mc-feelings__label">Tired</span></button>
+    </div>
+
+    <!-- Feelings Modal -->
+    <div class="mc-feelings__modal" data-feelings-modal aria-hidden="true">
+      <div class="mc-feelings__modal-backdrop" data-feelings-close></div>
+      <div class="mc-feelings__modal-card">
+        <button class="mc-feelings__modal-close" data-feelings-close aria-label="Close">&times;</button>
+        <div class="mc-feelings__modal-icon"><i class="bi bi-heart"></i></div>
+        <p class="mc-feelings__modal-text" data-feelings-message></p>
+        <a href="journal.html" class="mc-about__btn mc-about__btn--primary">Write in Your Journal</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- YOUR MENTAL JOURNEY -->
+  <section data-reveal id="journey">
+    <div class="mc-about__header">
+      <span class="mc-about__eyebrow"><i class="bi bi-signpost-split"></i> Your Journey</span>
+      <h2 class="mc-about__title">Your Mental Health Journey</h2>
+      <p class="mc-about__subtitle">Every journey begins with a single step. Here is how MindCare Hub walks alongside you.</p>
+    </div>
+    <div class="mc-journey__path">
+      <div class="mc-journey__step" data-reveal>
+        <div class="mc-journey__step-icon"><i class="bi bi-clipboard2-pulse"></i></div>
+        <h3 class="mc-journey__step-title">Assess</h3>
+        <p class="mc-journey__step-desc">Start with a gentle, confidential assessment so you understand where you are right now.</p>
+      </div>
+      <div class="mc-journey__arrow"><i class="bi bi-chevron-double-down"></i></div>
+      <div class="mc-journey__step" data-reveal>
+        <div class="mc-journey__step-icon"><i class="bi bi-journal-text"></i></div>
+        <h3 class="mc-journey__step-title">Reflect</h3>
+        <p class="mc-journey__step-desc">Use the journal, mood tracker and guided activities to explore your inner world.</p>
+      </div>
+      <div class="mc-journey__arrow"><i class="bi bi-chevron-double-down"></i></div>
+      <div class="mc-journey__step" data-reveal>
+        <div class="mc-journey__step-icon"><i class="bi bi-graph-up-arrow"></i></div>
+        <h3 class="mc-journey__step-title">Grow</h3>
+        <p class="mc-journey__step-desc">Watch your progress unfold over time and celebrate every small victory along the way.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE MINDCARE -->
+  <section data-reveal id="trust">
+    <div class="mc-about__header">
+      <span class="mc-about__eyebrow"><i class="bi bi-patch-check"></i> Why MindCare</span>
+      <h2 class="mc-about__title">Why Choose MindCare Hub</h2>
+      <p class="mc-about__subtitle">Built with care, grounded in evidence, designed for calm.</p>
+    </div>
+    <div class="mc-trust__grid">
+      <div class="mc-trust__card" data-reveal>
+        <div class="mc-trust__icon"><i class="bi bi-shield-lock"></i></div>
+        <h3 class="mc-trust__title">Private &amp; Secure</h3>
+        <p class="mc-trust__desc">Your data stays on your device. No accounts are shared with third parties.</p>
+      </div>
+      <div class="mc-trust__card" data-reveal>
+        <div class="mc-trust__icon"><i class="bi bi-people"></i></div>
+        <h3 class="mc-trust__title">For Everyone</h3>
+        <p class="mc-trust__desc">Students, patients, parents and doctors each get a tailored experience.</p>
+      </div>
+      <div class="mc-trust__card" data-reveal>
+        <div class="mc-trust__icon"><i class="bi bi-stars"></i></div>
+        <h3 class="mc-trust__title">Science-Backed</h3>
+        <p class="mc-trust__desc">Guided by evidence-based practices in emotional wellness and CBT.</p>
+      </div>
+      <div class="mc-trust__card" data-reveal>
+        <div class="mc-trust__icon"><i class="bi bi-phone"></i></div>
+        <h3 class="mc-trust__title">Always Available</h3>
+        <p class="mc-trust__desc">Access your wellness tools anytime, from any device with a browser.</p>
+      </div>
+      <div class="mc-trust__card" data-reveal>
+        <div class="mc-trust__icon"><i class="bi bi-activity"></i></div>
+        <h3 class="mc-trust__title">Track Progress</h3>
+        <p class="mc-trust__desc">Visualize your mood trends and celebrate growth with built-in analytics.</p>
+      </div>
+      <div class="mc-trust__card" data-reveal>
+        <div class="mc-trust__icon"><i class="bi bi-heart-half"></i></div>
+        <h3 class="mc-trust__title">Gentle Design</h3>
+        <p class="mc-trust__desc">Soft colours, calm motion, and zero clutter so nothing adds to your stress.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- POSITIVITY WALL -->
+  <section data-reveal id="positivity">
+    <div class="mc-about__header">
+      <span class="mc-about__eyebrow"><i class="bi bi-quote"></i> Positivity Wall</span>
+      <h2 class="mc-about__title">A Gentle Reminder</h2>
+    </div>
+    <div class="mc-positivity__card">
+      <p class="mc-positivity__quote" data-quote-wall><span class="cursor"></span></p>
+      <div class="mc-positivity__dots" data-quote-dots></div>
+    </div>
+  </section>
+
+  <!-- BREATHING -->
+  <section data-reveal id="breathe">
+    <div class="mc-about__header">
+      <span class="mc-about__eyebrow"><i class="bi bi-wind"></i> Breathe</span>
+      <h2 class="mc-about__title">Take a Breath</h2>
+      <p class="mc-about__subtitle">Follow the circle. Breathe with it. You deserve this pause.</p>
+    </div>
+    <div class="mc-breathe__wrapper">
+      <div class="mc-breathe__circle-holder">
+        <div class="mc-breathe__ring"></div>
+        <div class="mc-breathe__circle" data-breathe-circle>Breathe In</div>
+      </div>
+      <p class="mc-breathe__hint">4 seconds in &middot; 4 seconds hold &middot; 6 seconds out. Repeat as many times as you need.</p>
+    </div>
+  </section>
+
+  <!-- GROWTH TREE -->
+  <section data-reveal id="growth">
+    <div class="mc-about__header">
+      <span class="mc-about__eyebrow"><i class="bi bi-tree"></i> Growth Tree</span>
+      <h2 class="mc-about__title">Your Growth Tree</h2>
+      <p class="mc-about__subtitle">Each leaf represents a step you have taken on your wellness journey.</p>
+    </div>
+    <div class="mc-tree__wrapper" data-tree>
+      <div class="mc-tree__trunk-holder">
+        <div class="mc-tree__canopy"></div>
+        <div class="mc-tree__trunk"></div>
+        <div class="mc-tree__leaf mc-tree__leaf--1" data-tree-leaf>Mood Check</div>
+        <div class="mc-tree__leaf mc-tree__leaf--2" data-tree-leaf>Journal Entry</div>
+        <div class="mc-tree__leaf mc-tree__leaf--3" data-tree-leaf>Deep Breath</div>
+        <div class="mc-tree__leaf mc-tree__leaf--4" data-tree-leaf>Activity Done</div>
+        <div class="mc-tree__leaf mc-tree__leaf--5" data-tree-leaf>Self-Care</div>
+        <div class="mc-tree__leaf mc-tree__leaf--6" data-tree-leaf>Keep Going</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section data-reveal id="cta">
+    <div class="mc-final-cta">
+      <div class="mc-final-cta__card">
+        <div class="mc-final-cta__glow" aria-hidden="true"></div>
+        <div class="mc-final-cta__content">
+          <h2 class="mc-final-cta__title">Ready to Begin?</h2>
+          <p class="mc-final-cta__sub">Your wellness journey is one click away. No pressure, no judgement — just support.</p>
+          <a href="patient-assessment.html" class="mc-about__btn mc-about__btn--primary mc-final-cta__btn">Start Your Assessment <i class="bi bi-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- Footer injected by component.js -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/about.js"></script>
+<script src="js/component.js"></script>
+<script src="js/common.js"></script>
+</body>
+</html>

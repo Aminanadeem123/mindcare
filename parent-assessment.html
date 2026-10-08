@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Parent Assessment - MindCare Hub</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/premium-theme.css">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/parent-assessment.css">
+
+    <link rel="stylesheet" href="css/component.css">
+</head>
+<body class="theme-calm">
+  <!-- Navbar injected by component.js -->
+
+  <main class="py-4 py-lg-5">
+    <div class="page-shell">
+      <div class="hero-card">
+      <div class="d-flex flex-column flex-lg-row justify-content-between gap-3 align-items-lg-center">
+        <div>
+          <div class="pill"><i class="bi bi-people-fill"></i> Parent Support Check-In</div>
+          <h1 class="mt-3 mb-2 fw-bold">Support your child with a calm, structured check-in.</h1>
+          <p class="mb-0 muted">Share what your child is experiencing so the care team can guide the next step with compassion and clarity.</p>
+        </div>
+        <a href="index.html" class="btn btn-outline-secondary">Back to Home</a>
+      </div>
+    </div>
+
+    <div class="form-card">
+      <form id="parentAssessmentForm">
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label class="form-label" for="parentName">Parent / Guardian Name</label>
+            <input class="form-control" id="parentName" name="parentName" required>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label" for="childName">Child Name</label>
+            <input class="form-control" id="childName" name="childName" required>
+          </div>
+          <div class="col-md-4">
+            <label class="form-label" for="childAge">Child Age</label>
+            <input type="number" class="form-control" id="childAge" name="childAge" min="3" max="18" required>
+          </div>
+          <div class="col-md-4">
+            <label class="form-label" for="relationship">Relationship</label>
+            <select class="form-select" id="relationship" name="relationship" required>
+              <option value="">Select</option>
+              <option>Mother</option>
+              <option>Father</option>
+              <option>Guardian</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="col-md-4">
+            <label class="form-label" for="contact">Contact Email</label>
+            <input type="email" class="form-control" id="contact" name="contact" required>
+          </div>
+          <div class="col-12">
+            <label class="form-label" for="concern">What concern would you like support with?</label>
+            <textarea class="form-control" id="concern" name="concern" rows="4" required></textarea>
+          </div>
+          <div class="col-12">
+            <label class="form-label" for="support">What support would help most right now?</label>
+            <textarea class="form-control" id="support" name="support" rows="3"></textarea>
+          </div>
+        </div>
+
+        <div class="d-flex flex-wrap gap-2 mt-4">
+          <button type="submit" class="btn btn-primary">Save Parent Assessment</button>
+          <a href="patient-dashboard.html" class="btn btn-outline-secondary">View Progress</a>
+        </div>
+      </form>
+      <div id="confirmation" class="alert alert-success mt-4 d-none" role="status"></div>
+    </div>
+  </div>
+  </main>
+
+  <!-- Footer injected by component.js -->
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/parent-assessment.js"></script>
+<script src="js/component.js"></script>
+</body>
+</html>

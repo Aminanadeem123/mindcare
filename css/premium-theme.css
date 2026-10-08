@@ -1,0 +1,511 @@
+/* ==========================================================================
+   MindCare Hub — Premium Theme Extensions
+   Component styles (buttons, cards, forms, portal).
+   Requires: global.css for tokens + reset.
+   ========================================================================== */
+
+/* Buttons */
+.btn,
+button {
+  border-radius: var(--mc-radius-lg);
+  transition: transform .18s ease, box-shadow .22s ease, background .18s ease, opacity .18s ease;
+  min-height: 44px;
+  padding: 0.6rem 1.1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn:hover,
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(13,120,115,0.08);
+}
+
+.btn-primary,
+.btn-teal,
+.premium-btn,
+.eco-btn,
+.mc-btn--primary,
+.btn-success {
+  background: linear-gradient(135deg, var(--mc-accent-primary) 0%, var(--mc-accent-primary-dark) 100%);
+  color: #fff;
+  border: 0;
+  box-shadow: 0 10px 26px rgba(13,120,115,0.10);
+  font-weight: 600;
+}
+
+.btn-outline-secondary,
+.btn-outline-cta,
+.btn-secondary {
+  background: rgba(255,255,255,0.9);
+  color: var(--mc-text-primary);
+  border: 1px solid var(--mc-border);
+  box-shadow: var(--mc-shadow-soft);
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   Navbar styles — managed by component.css; do not override here.
+   ========================================================================== */
+
+.card,
+.glass,
+.glass-card,
+.hero-card,
+.form-card,
+.team-card,
+.value-pill,
+.journal-stat-card,
+.trend-box,
+.rec-card,
+.activity-done-row,
+.game-card,
+.session-card,
+.patient-selector,
+.form-wrapper,
+.panel,
+.dashboard-card {
+  background: var(--mc-surface-strong);
+  border: 1px solid var(--mc-border);
+  border-radius: var(--mc-radius-md);
+  box-shadow: var(--mc-shadow);
+  backdrop-filter: blur(6px);
+  transition: transform .22s ease, box-shadow .22s ease;
+}
+
+.card:hover,
+.glass:hover,
+.dashboard-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(16,24,32,0.08);
+}
+
+footer,
+.mc-footer,
+.footer {
+  background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(249,251,252,0.98));
+  border-top: 1px solid var(--mc-border);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.9);
+  padding: 3.5rem 0;
+}
+
+.form-control,
+.form-select,
+textarea,
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="tel"] {
+  border: 1px solid rgba(16,24,32,0.06);
+  border-radius: 12px;
+  background: rgba(255,255,255,0.96);
+  box-shadow: inset 0 1px 1px rgba(16,24,32,0.02);
+  padding: 0.65rem 0.85rem;
+}
+
+.form-control:focus,
+.form-select:focus,
+textarea:focus,
+input:focus {
+  border-color: var(--mc-accent-primary);
+  box-shadow: 0 6px 30px rgba(13,120,115,0.06);
+  outline: none;
+}
+
+.container {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  max-width: 1320px;
+}
+
+@media (max-width: 768px) {
+  .container { padding-left: 1rem; padding-right: 1rem; }
+}
+
+section,
+.container,
+.container-fluid,
+.page-shell,
+.main-content,
+.hero,
+.hero-section,
+.portal-wrapper {
+  position: relative;
+}
+
+section + section,
+section + .container,
+.container + section {
+  margin-top: 2.25rem;
+}
+
+.hero,
+.hero-section,
+.hero-card,
+.portal-wrapper {
+  padding: 2.5rem 0;
+}
+
+.hero h1,
+.hero .display-1,
+.portal-header .brand-title,
+.step-title,
+.section-title,
+.page-title {
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.04;
+}
+
+.hero .lead,
+.hero-subtitle,
+.step-desc,
+.section-subtitle,
+.brand-subtitle,
+.card-text,
+.text-muted,
+small,
+.form-text,
+.list-group-item,
+.footer p,
+.footer a {
+  line-height: 1.7;
+}
+
+.feature-card,
+.stat-card,
+.quote-card,
+.value-pill,
+.service-card,
+.story-card,
+.activity-card,
+.meditation-card,
+.mood-card,
+.journal-card,
+.drawing-card,
+.game-card,
+.session-card,
+.assessment-card,
+.question-card,
+.result-card,
+.dashboard-card,
+.chart-card,
+.history-card,
+.table-card,
+.summary-card,
+.panel,
+.profile-card,
+.patient-selector {
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-card::before,
+.stat-card::before,
+.quote-card::before,
+.value-pill::before,
+.service-card::before,
+.story-card::before,
+.activity-card::before,
+.meditation-card::before,
+.mood-card::before,
+.journal-card::before,
+.drawing-card::before,
+.game-card::before,
+.session-card::before,
+.assessment-card::before,
+.question-card::before,
+.result-card::before,
+.dashboard-card::before,
+.chart-card::before,
+.history-card::before,
+.summary-card::before,
+.panel::before,
+.profile-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(13, 148, 136, 0.05), rgba(255,255,255,0.12));
+  pointer-events: none;
+}
+
+.feature-card:hover,
+.stat-card:hover,
+.quote-card:hover,
+.service-card:hover,
+.story-card:hover,
+.activity-card:hover,
+.meditation-card:hover,
+.mood-card:hover,
+.journal-card:hover,
+.drawing-card:hover,
+.game-card:hover,
+.session-card:hover,
+.assessment-card:hover,
+.question-card:hover,
+.result-card:hover,
+.dashboard-card:hover,
+.chart-card:hover,
+.history-card:hover,
+.summary-card:hover,
+.panel:hover,
+.profile-card:hover,
+.patient-selector:hover {
+  transform: translateY(-6px) scale(1.01);
+}
+
+.btn:hover,
+button:hover,
+.navbar .nav-link:hover,
+.navbar-brand:hover,
+.footer a:hover,
+.list-group-item:hover {
+  transition: transform .2s ease, box-shadow .2s ease, color .2s ease, border-color .2s ease;
+}
+
+.btn-primary:hover,
+.btn-teal:hover,
+.premium-btn:hover,
+.eco-btn:hover,
+.mc-btn--primary:hover,
+.btn-success:hover {
+  box-shadow: 0 16px 40px rgba(13, 120, 115, 0.16);
+}
+
+.btn-outline-secondary:hover,
+.btn-outline-cta:hover,
+.btn-secondary:hover,
+.btn-outline-dark:hover {
+  border-color: rgba(13, 148, 136, 0.28);
+  color: var(--mc-accent-primary-dark);
+}
+
+.btn-danger,
+.btn-outline-danger,
+.text-danger {
+  border-color: rgba(16,24,32,0.08);
+}
+
+.btn:focus,
+button:focus,
+a:focus,
+input:focus,
+select:focus,
+textarea:focus,
+.form-check-input:focus {
+  outline: 2px solid rgba(13, 148, 136, 0.2);
+  outline-offset: 2px;
+}
+
+/* ==========================================================================
+   Navbar link underline — managed by component.css
+   ========================================================================== */
+
+.form-card,
+.glass-card,
+.portal-wrapper .glass-card,
+.step-panel {
+  background: rgba(255,255,255,0.9);
+  border: 1px solid rgba(255,255,255,0.72);
+  box-shadow: 0 24px 70px rgba(15,23,42,0.08);
+  border-radius: 28px;
+  overflow: hidden;
+}
+
+.portal-header {
+  margin-bottom: 1.5rem;
+}
+
+.portal-header .brand-mark {
+  width: 64px;
+  height: 64px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(13,148,136,0.12), rgba(20,184,166,0.2));
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.8);
+}
+
+.step-panel {
+  padding: 2rem;
+}
+
+.role-card,
+.option-card,
+.option-btn,
+.choice-card,
+.quiz-option,
+.list-group-item {
+  border: 1px solid rgba(16,24,32,0.06);
+  border-radius: 16px;
+  background: rgba(255,255,255,0.92);
+  box-shadow: var(--mc-shadow-soft);
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+
+.role-card:hover,
+.option-card:hover,
+.option-btn:hover,
+.choice-card:hover,
+.quiz-option:hover {
+  transform: translateY(-3px);
+  border-color: rgba(13,148,136,0.22);
+  box-shadow: 0 16px 40px rgba(15,23,42,0.08);
+}
+
+.form-label,
+.form-check-label,
+legend,
+label {
+  font-weight: 600;
+  color: var(--mc-text-primary);
+  margin-bottom: 0.45rem;
+}
+
+.form-control,
+.form-select,
+textarea,
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="tel"] {
+  padding: 0.8rem 0.95rem;
+  min-height: 48px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.96);
+  border: 1px solid rgba(16,24,32,0.08);
+}
+
+.form-control::placeholder,
+.form-select::placeholder,
+textarea::placeholder {
+  color: rgba(100,116,139,0.8);
+}
+
+.form-check-input {
+  width: 1.05rem;
+  height: 1.05rem;
+  border-radius: 0.3rem;
+  border: 1px solid rgba(16,24,32,0.14);
+}
+
+.form-check-input:checked {
+  background-color: var(--mc-accent-primary);
+  border-color: var(--mc-accent-primary);
+}
+
+.invalid-feedback {
+  color: #7f1d1d;
+  font-size: 0.9rem;
+  margin-top: 0.45rem;
+}
+
+.was-validated .form-control:invalid,
+.was-validated .form-select:invalid,
+.form-control.is-invalid,
+.form-select.is-invalid {
+  border-color: rgba(127, 29, 29, 0.36);
+  box-shadow: 0 0 0 4px rgba(127, 29, 29, 0.08);
+}
+
+.was-validated .form-control:valid,
+.was-validated .form-select:valid,
+.form-control.is-valid,
+.form-select.is-valid {
+  border-color: rgba(13, 148, 136, 0.36);
+  box-shadow: 0 0 0 4px rgba(13, 148, 136, 0.08);
+}
+
+.progress,
+.progress-bar {
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  background: linear-gradient(135deg, var(--mc-accent-primary), var(--mc-accent-secondary));
+}
+
+.badge,
+.badge-pill,
+.status-badge {
+  border-radius: 999px;
+  padding: 0.36rem 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.table {
+  border-collapse: separate;
+  border-spacing: 0 0.5rem;
+}
+
+.table th,
+.table td {
+  padding: 0.85rem 1rem;
+  border: 0;
+  background: rgba(255,255,255,0.8);
+}
+
+.footer a,
+.footer-link,
+.nav-link {
+  position: relative;
+  transition: color .2s ease;
+}
+
+.footer a:hover,
+.footer-link:hover {
+  color: var(--mc-accent-primary-dark);
+}
+
+.social-links .btn,
+.footer .btn,
+.footer .nav-link {
+  min-height: 40px;
+}
+
+@media (max-width: 768px) {
+  .hero,
+  .hero-section,
+  .portal-wrapper {
+    padding: 1.5rem 0;
+  }
+
+  .step-panel {
+    padding: 1.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  h1 { font-size: 2.1rem; }
+  h2 { font-size: 1.7rem; }
+  .btn,
+  button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .navbar-expand-lg {
+    padding: 0.8rem 0.9rem;
+  }
+
+  .step-panel {
+    padding: 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+

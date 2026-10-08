@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MindCare Hub — Find Your Calm</title>
+  <meta name="description" content="MindCare Hub is an emotional wellness experience for mood tracking, relaxation, mindful activities, and daily reflection.">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/component.css">
+  <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+
+  <!-- Mouse Glow -->
+<div class="mc-mouse-glow" data-mouse-glow aria-hidden="true"></div>
+
+<!-- Firefly Layer -->
+<div class="mc-firefly-layer" data-firefly-layer aria-hidden="true"></div>
+
+  <!-- ============================================================ -->
+  <!-- FLOATING NAVBAR -->
+  <!-- ============================================================ -->
+  <!-- Navbar injected by component.js -->
+
+  <main id="home" class="mc-main">
+
+    <!-- ============================================================ -->
+    <!-- HERO SECTION -->
+    <!-- ============================================================ -->
+    <section class="mc-hero" aria-labelledby="mc-hero-heading">
+
+      <!-- Background Layer -->
+      <div class="mc-hero__background" aria-hidden="true"></div>
+            <div class="mc-bg-aurora"
+              data-bg-effect
+              data-speed="0.4"
+              data-amplitude="20">
+          </div>
+
+          <section class="mc-hero" data-hero></section>
+
+          <div class="mc-hero__illustration"
+     data-hero-illustration>
+</div>
+
+      <!-- Aurora Layer -->
+      <div class="mc-hero__aurora" aria-hidden="true">
+        <span class="mc-hero__aurora-band mc-hero__aurora-band--on`````````````e"></span>
+        <span class="mc-hero__aurora-band mc-hero__aurora-band--two"></span>
+        <span class="mc-hero__aurora-band mc-hero__aurora-band--three"></span>
+      </div>
+
+      <!-- Light Particles Layer -->
+      <div class="mc-hero__particles" aria-hidden="true">
+        <span class="mc-hero__particle"></span>
+        <span class="mc-hero__particle"></span>
+        <span class="mc-hero__particle"></span>
+        <span class="mc-hero__particle"></span>
+        <span class="mc-hero__particle"></span>
+        <span class="mc-hero__particle"></span>
+      </div>
+
+      <!-- Floating Leaves Layer -->
+      <div class="mc-hero__leaves" aria-hidden="true">
+        <span class="mc-hero__leaf mc-hero__leaf--one"></span>
+        <span class="mc-hero__leaf mc-hero__leaf--two"></span>
+        <span class="mc-hero__leaf mc-hero__leaf--three"></span>
+      </div>
+
+      <!-- Glow Layer -->
+      <div class="mc-hero__glow" aria-hidden="true"></div>
+
+      <!-- Content Layer -->
+      <div class="mc-hero__content">
+        <h1 id="mc-hero-heading" class="mc-hero__headline">Breathe In Calm, Breathe Out Peace</h1>
+        <p class="mc-hero__subtitle">A gentle space to understand your emotions, restore your energy, and grow at your own pace.</p>
+        <div class="mc-hero__cta-group">
+          <a
+            href="#mood"class="mc-hero__cta mc-hero__cta--primary">
+            Start Your Journey
+          </a>
+          <button type="button" class="mc-hero__cta mc-hero__cta--secondary">Explore the Garden</button>
+        </div>
+        <p class="mc-hero__trust-text">Trusted by over 120,000 people finding their calm every day.</p>
+      </div>
+
+      <!-- Illustration Layer -->
+      <div class="mc-hero__illustration" aria-hidden="true">
+        <div class="mc-hero__person-meditating"></div>
+
+        <div class="mc-hero__bubbles">
+          <span class="mc-hero__bubble mc-hero__bubble--one"></span>
+          <span class="mc-hero__bubble mc-hero__bubble--two"></span>
+          <span class="mc-hero__bubble mc-hero__bubble--three"></span>
+        </div>
+
+        <div class="mc-hero__glow-circles">
+          <span class="mc-hero__glow-circle mc-hero__glow-circle--one"></span>
+          <span class="mc-hero__glow-circle mc-hero__glow-circle--two"></span>
+        </div>
+
+        <div class="mc-hero__illustration-leaves">
+          <span class="mc-hero__illustration-leaf"></span>
+          <span class="mc-hero__illustration-leaf"></span>
+        </div>
+
+        <div class="mc-hero__cloud-mist">
+          <span class="mc-hero__mist mc-hero__mist--one"></span>
+          <span class="mc-hero__mist mc-hero__mist--two"></span>
+        </div>
+
+        <div class="mc-hero__birds">
+          <span class="mc-hero__bird mc-hero__bird--one"></span>
+          <span class="mc-hero__bird mc-hero__bird--two"></span>
+        </div>
+      </div>
+
+      <!-- Mouse Glow Layer -->
+      <div class="mc-hero__mouse-glow" aria-hidden="true"></div>
+
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- MOOD GARDEN -->
+    <!-- ============================================================ -->
+    <section id="mood" class="mc-mood-garden" aria-labelledby="mc-mood-garden-heading">
+      <div class="mc-mood-garden__header">
+        <h2 id="mc-mood-garden-heading" class="mc-mood-garden__title">Step Into the Mood Garden</h2>
+        <p class="mc-mood-garden__subtitle">Touch a lotus that mirrors how you feel today.</p>
+      </div>
+
+      <div class="mc-mood-garden__pond" role="group" aria-label="Mood selection pond">
+
+        <!-- Ambient Pond Layer -->
+        <div class="mc-mood-garden__pond-surface" aria-hidden="true"></div>
+        <div class="mc-mood-garden__pond-ripples" aria-hidden="true"></div>
+
+        <!-- Lotus Buttons -->
+        <ul class="mc-mood-garden__lotus-cluster">
+
+          <li class="mc-mood-garden__lotus" data-mood="happy">
+            <button type="button" class="mc-mood-garden__lotus-button" aria-label="Select happy mood">
+              <span class="mc-mood-garden__lotus-icon"><i class="bi bi-emoji-sun" aria-hidden="true"></i></span>
+              <span class="mc-mood-garden__lotus-title">Happy</span>
+              <span class="mc-mood-garden__lotus-description">Light, bright, and full of energy.</span>
+            </button>
+            <p class="mc-mood-garden__lotus-message" hidden>Your joy is contagious — let's nurture it further.</p>
+          </li>
+
+          <li class="mc-mood-garden__lotus" data-mood="calm">
+            <button type="button" class="mc-mood-garden__lotus-button" aria-label="Select calm mood">
+              <span class="mc-mood-garden__lotus-icon"><i class="bi bi-water" aria-hidden="true"></i></span>
+              <span class="mc-mood-garden__lotus-title">Calm</span>
+              <span class="mc-mood-garden__lotus-description">Settled, steady, at ease.</span>
+            </button>
+            <p class="mc-mood-garden__lotus-message" hidden>Stillness suits you today. Let's keep the waters smooth.</p>
+          </li>
+
+          <li class="mc-mood-garden__lotus" data-mood="peaceful">
+            <button type="button" class="mc-mood-garden__lotus-button" aria-label="Select peaceful mood">
+              <span class="mc-mood-garden__lotus-icon"><i class="bi bi-cloud-moon" aria-hidden="true"></i></span>
+              <span class="mc-mood-garden__lotus-title">Peaceful</span>
+              <span class="mc-mood-garden__lotus-description">Quiet, unhurried, and whole.</span>
+            </button>
+            <p class="mc-mood-garden__lotus-message" hidden>A peaceful mind opens space for gentle reflection.</p>
+          </li>
+
+          <li class="mc-mood-garden__lotus" data-mood="focused">
+            <button type="button" class="mc-mood-garden__lotus-button" aria-label="Select focused mood">
+              <span class="mc-mood-garden__lotus-icon"><i class="bi bi-bullseye" aria-hidden="true"></i></span>
+              <span class="mc-mood-garden__lotus-title">Focused</span>
+              <span class="mc-mood-garden__lotus-description">Clear, sharp, and intentional.</span>
+            </button>
+            <p class="mc-mood-garden__lotus-message" hidden>Channel this clarity into something meaningful today.</p>
+          </li>
+
+          <li class="mc-mood-garden__lotus" data-mood="hopeful">
+            <button type="button" class="mc-mood-garden__lotus-button" aria-label="Select hopeful mood">
+              <span class="mc-mood-garden__lotus-icon"><i class="bi bi-brightness-high" aria-hidden="true"></i></span>
+              <span class="mc-mood-garden__lotus-title">Hopeful</span>
+              <span class="mc-mood-garden__lotus-description">Optimistic and looking forward.</span>
+            </button>
+            <p class="mc-mood-garden__lotus-message" hidden>Hope is a quiet strength — hold onto it gently.</p>
+          </li>
+
+          <li class="mc-mood-garden__lotus" data-mood="tired">
+            <button type="button" class="mc-mood-garden__lotus-button" aria-label="Select tired mood">
+              <span class="mc-mood-garden__lotus-icon"><i class="bi bi-moon-stars" aria-hidden="true"></i></span>
+              <span class="mc-mood-garden__lotus-title">Tired</span>
+              <span class="mc-mood-garden__lotus-description">Low on energy, needing rest.</span>
+            </button>
+            <p class="mc-mood-garden__lotus-message" hidden>Rest is productive too. Let's slow things down.</p>
+          </li>
+
+          <li class="mc-mood-garden__lotus" data-mood="anxious">
+            <button type="button" class="mc-mood-garden__lotus-button" aria-label="Select anxious mood">
+              <span class="mc-mood-garden__lotus-icon"><i class="bi bi-wind" aria-hidden="true"></i></span>
+              <span class="mc-mood-garden__lotus-title">Anxious</span>
+              <span class="mc-mood-garden__lotus-description">Uneasy, tense, or overwhelmed.</span>
+            </button>
+            <p class="mc-mood-garden__lotus-message" hidden>You're safe here. Let's breathe through this together.</p>
+          </li>
+
+        </ul>
+      </div>
+
+      <!-- Mood Response Area -->
+      <div class="mc-mood-garden__response" role="status" aria-live="polite">
+        <p class="mc-mood-garden__response-text">Select a lotus above to see a reflection here.</p>
+      </div>
+
+      <button type="button" class="mc-mood-garden__continue">Continue Journey</button>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- WELLNESS JOURNEY (RIVER) -->
+    <!-- ============================================================ -->
+    <section class="mc-river-journey" aria-labelledby="mc-river-journey-heading">
+      <h2 id="mc-river-journey-heading" class="mc-river-journey__title">Your Wellness Journey</h2>
+
+      <div class="mc-river-journey__river-wrapper">
+
+        <!-- Organic River Path -->
+        <div class="mc-river-journey__river-path" aria-hidden="true"></div>
+        <div class="mc-river-journey__river-flow" aria-hidden="true"></div>
+
+        <!-- Milestone Islands -->
+        <ol class="mc-river-journey__islands">
+
+          <li class="mc-river-journey__island" data-milestone="home">
+            <div class="mc-river-journey__island-icon"><i class="bi bi-house-heart" aria-hidden="true"></i></div>
+            <h3 class="mc-river-journey__island-title">Home</h3>
+            <p class="mc-river-journey__island-description">Your calm starting point.</p>
+            <span class="mc-river-journey__island-arrow" aria-hidden="true"><i class="bi bi-arrow-right"></i></span>
+            <div class="mc-river-journey__island-hover" hidden>Return here anytime to reset.</div>
+          </li>
+
+          <li class="mc-river-journey__island" data-milestone="mood">
+            <div class="mc-river-journey__island-icon"><i class="bi bi-flower2" aria-hidden="true"></i></div>
+            <h3 class="mc-river-journey__island-title">Mood</h3>
+            <p class="mc-river-journey__island-description">Check in with yourself.</p>
+            <span class="mc-river-journey__island-arrow" aria-hidden="true"><i class="bi bi-arrow-right"></i></span>
+            <div class="mc-river-journey__island-hover" hidden>Understanding starts with noticing.</div>
+          </li>
+
+          <li class="mc-river-journey__island" data-milestone="relax">
+            <div class="mc-river-journey__island-icon"><i class="bi bi-cloud-sun" aria-hidden="true"></i></div>
+            <h3 class="mc-river-journey__island-title">Relax</h3>
+            <p class="mc-river-journey__island-description">Unwind with guided calm.</p>
+            <span class="mc-river-journey__island-arrow" aria-hidden="true"><i class="bi bi-arrow-right"></i></span>
+            <div class="mc-river-journey__island-hover" hidden>Even five minutes can reset your day.</div>
+          </li>
+
+          <li class="mc-river-journey__island" data-milestone="activities">
+            <div class="mc-river-journey__island-icon"><i class="bi bi-stars" aria-hidden="true"></i></div>
+            <h3 class="mc-river-journey__island-title">Activities</h3>
+            <p class="mc-river-journey__island-description">Gentle exercises for the mind.</p>
+            <span class="mc-river-journey__island-arrow" aria-hidden="true"><i class="bi bi-arrow-right"></i></span>
+            <div class="mc-river-journey__island-hover" hidden>Small actions build lasting habits.</div>
+          </li>
+
+          <li class="mc-river-journey__island" data-milestone="journal">
+            <div class="mc-river-journey__island-icon"><i class="bi bi-journal-richtext" aria-hidden="true"></i></div>
+            <h3 class="mc-river-journey__island-title">Journal</h3>
+            <p class="mc-river-journey__island-description">Put your thoughts into words.</p>
+            <span class="mc-river-journey__island-arrow" aria-hidden="true"><i class="bi bi-arrow-right"></i></span>
+            <div class="mc-river-journey__island-hover" hidden>Writing clears the mind's clutter.</div>
+          </li>
+
+          <li class="mc-river-journey__island" data-milestone="assessment">
+            <div class="mc-river-journey__island-icon"><i class="bi bi-clipboard2-pulse" aria-hidden="true"></i></div>
+            <h3 class="mc-river-journey__island-title">Assessment</h3>
+            <p class="mc-river-journey__island-description">Understand your wellbeing.</p>
+            <span class="mc-river-journey__island-arrow" aria-hidden="true"><i class="bi bi-arrow-right"></i></span>
+            <div class="mc-river-journey__island-hover" hidden>A quiet check-in, at your own pace.</div>
+          </li>
+
+          <li class="mc-river-journey__island" data-milestone="contact">
+            <div class="mc-river-journey__island-icon"><i class="bi bi-life-preserver" aria-hidden="true"></i></div>
+            <h3 class="mc-river-journey__island-title">Contact</h3>
+            <p class="mc-river-journey__island-description">Reach out when you need support.</p>
+            <span class="mc-river-journey__island-arrow" aria-hidden="true" data-last="true"></span>
+            <div class="mc-river-journey__island-hover" hidden>You are never alone in this journey.</div>
+          </li>
+
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- FEATURE ISLANDS -->
+    <!-- ============================================================ -->
+    <section id="activities" class="mc-feature-islands" aria-labelledby="mc-feature-islands-heading">
+      <h2 id="mc-feature-islands-heading" class="mc-feature-islands__title">Explore Your Wellness Toolkit</h2>
+
+      <div class="mc-feature-islands__field">
+
+        <article class="mc-feature-islands__island" data-feature="mood-tracker">
+          <div class="mc-feature-islands__decor" aria-hidden="true"></div>
+          <div class="mc-feature-islands__glow" aria-hidden="true"></div>
+          <div class="mc-feature-islands__particles" aria-hidden="true">
+            <span class="mc-feature-islands__particle"></span>
+            <span class="mc-feature-islands__particle"></span>
+          </div>
+          <div class="mc-feature-islands__icon"><i class="bi bi-graph-up-arrow" aria-hidden="true"></i></div>
+          <h3 class="mc-feature-islands__item-title">Mood Tracker</h3>
+          <p class="mc-feature-islands__item-description">Log and visualize your emotional patterns over time.</p>
+          <button type="button" class="mc-feature-islands__action">Open Tracker</button>
+        </article>
+
+        <article class="mc-feature-islands__island" id="relax" data-feature="relaxation-hub">
+          <div class="mc-feature-islands__decor" aria-hidden="true"></div>
+          <div class="mc-feature-islands__glow" aria-hidden="true"></div>
+          <div class="mc-feature-islands__particles" aria-hidden="true">
+            <span class="mc-feature-islands__particle"></span>
+            <span class="mc-feature-islands__particle"></span>
+          </div>
+          <div class="mc-feature-islands__icon"><i class="bi bi-soundwave" aria-hidden="true"></i></div>
+          <h3 class="mc-feature-islands__item-title">Relaxation Hub</h3>
+          <p class="mc-feature-islands__item-description">Mindful exercises, guided meditation, grounding techniques, and peaceful wellness activities.</p>
+          <button type="button" class="mc-feature-islands__action">Enter Hub</button>
+        </article>
+
+        <article class="mc-feature-islands__island" data-feature="mindful-movement">
+          <div class="mc-feature-islands__decor" aria-hidden="true"></div>
+          <div class="mc-feature-islands__glow" aria-hidden="true"></div>
+          <div class="mc-feature-islands__particles" aria-hidden="true">
+            <span class="mc-feature-islands__particle"></span>
+            <span class="mc-feature-islands__particle"></span>
+          </div>
+          <div class="mc-feature-islands__icon"><i class="bi bi-person-arms-up" aria-hidden="true"></i></div>
+          <h3 class="mc-feature-islands__item-title">Mindful Movement</h3>
+          <p class="mc-feature-islands__item-description">Gentle stretches and movement to reconnect body and mind.</p>
+          <button type="button" class="mc-feature-islands__action">Start Moving</button>
+        </article>
+
+        <article class="mc-feature-islands__island" data-feature="activities">
+          <div class="mc-feature-islands__decor" aria-hidden="true"></div>
+          <div class="mc-feature-islands__glow" aria-hidden="true"></div>
+          <div class="mc-feature-islands__particles" aria-hidden="true">
+            <span class="mc-feature-islands__particle"></span>
+            <span class="mc-feature-islands__particle"></span>
+          </div>
+          <div class="mc-feature-islands__icon"><i class="bi bi-puzzle" aria-hidden="true"></i></div>
+          <h3 class="mc-feature-islands__item-title">Activities</h3>
+          <p class="mc-feature-islands__item-description">Bite-sized exercises to build daily emotional resilience.</p>
+          <button type="button" class="mc-feature-islands__action">Browse Activities</button>
+        </article>
+
+        <article class="mc-feature-islands__island" id="journal" data-feature="journal">
+          <div class="mc-feature-islands__decor" aria-hidden="true"></div>
+          <div class="mc-feature-islands__glow" aria-hidden="true"></div>
+          <div class="mc-feature-islands__particles" aria-hidden="true">
+            <span class="mc-feature-islands__particle"></span>
+            <span class="mc-feature-islands__particle"></span>
+          </div>
+          <div class="mc-feature-islands__icon"><i class="bi bi-pencil-square" aria-hidden="true"></i></div>
+          <h3 class="mc-feature-islands__item-title">Journal</h3>
+          <p class="mc-feature-islands__item-description">A private space to write and reflect on your day.</p>
+          <button type="button" class="mc-feature-islands__action">Write Entry</button>
+        </article>
+
+        <article class="mc-feature-islands__island" data-feature="daily-reflection">
+          <div class="mc-feature-islands__decor" aria-hidden="true"></div>
+          <div class="mc-feature-islands__glow" aria-hidden="true"></div>
+          <div class="mc-feature-islands__particles" aria-hidden="true">
+            <span class="mc-feature-islands__particle"></span>
+            <span class="mc-feature-islands__particle"></span>
+          </div>
+          <div class="mc-feature-islands__icon"><i class="bi bi-brightness-alt-high" aria-hidden="true"></i></div>
+          <h3 class="mc-feature-islands__item-title">Daily Reflection</h3>
+          <p class="mc-feature-islands__item-description">A short prompt each day to deepen self-awareness.</p>
+          <button type="button" class="mc-feature-islands__action">Reflect Now</button>
+        </article>
+
+        <article class="mc-feature-islands__island" id="assessment" data-feature="assessment">
+          <div class="mc-feature-islands__decor" aria-hidden="true"></div>
+          <div class="mc-feature-islands__glow" aria-hidden="true"></div>
+          <div class="mc-feature-islands__particles" aria-hidden="true">
+            <span class="mc-feature-islands__particle"></span>
+            <span class="mc-feature-islands__particle"></span>
+          </div>
+          <div class="mc-feature-islands__icon"><i class="bi bi-clipboard2-check" aria-hidden="true"></i></div>
+          <h3 class="mc-feature-islands__item-title">Assessment</h3>
+          <p class="mc-feature-islands__item-description">A gentle self-assessment to understand where you stand.</p>
+          <button type="button" class="mc-feature-islands__action">Take Assessment</button>
+        </article>
+
+        <article class="mc-feature-islands__island" data-feature="feedback">
+          <div class="mc-feature-islands__decor" aria-hidden="true"></div>
+          <div class="mc-feature-islands__glow" aria-hidden="true"></div>
+          <div class="mc-feature-islands__particles" aria-hidden="true">
+            <span class="mc-feature-islands__particle"></span>
+            <span class="mc-feature-islands__particle"></span>
+          </div>
+          <div class="mc-feature-islands__icon"><i class="bi bi-chat-heart" aria-hidden="true"></i></div>
+          <h3 class="mc-feature-islands__item-title">Feedback</h3>
+          <p class="mc-feature-islands__item-description">Share your thoughts to help us grow together.</p>
+          <button type="button" class="mc-feature-islands__action">Give Feedback</button>
+        </article>
+
+        <article class="mc-feature-islands__island" data-feature="resources">
+          <div class="mc-feature-islands__decor" aria-hidden="true"></div>
+          <div class="mc-feature-islands__glow" aria-hidden="true"></div>
+          <div class="mc-feature-islands__particles" aria-hidden="true">
+            <span class="mc-feature-islands__particle"></span>
+            <span class="mc-feature-islands__particle"></span>
+          </div>
+          <div class="mc-feature-islands__icon"><i class="bi bi-book" aria-hidden="true"></i></div>
+          <h3 class="mc-feature-islands__item-title">Resources</h3>
+          <p class="mc-feature-islands__item-description">Articles and guides curated for emotional wellbeing.</p>
+          <button type="button" class="mc-feature-islands__action">View Resources</button>
+        </article>
+
+        <article class="mc-feature-islands__island" data-feature="emergency-support">
+          <div class="mc-feature-islands__decor" aria-hidden="true"></div>
+          <div class="mc-feature-islands__glow" aria-hidden="true"></div>
+          <div class="mc-feature-islands__particles" aria-hidden="true">
+            <span class="mc-feature-islands__particle"></span>
+            <span class="mc-feature-islands__particle"></span>
+          </div>
+          <div class="mc-feature-islands__icon"><i class="bi bi-life-preserver" aria-hidden="true"></i></div>
+          <h3 class="mc-feature-islands__item-title">Emergency Support</h3>
+          <p class="mc-feature-islands__item-description">Helpful wellness resources and guidance whenever you need support.</p>
+          <button type="button" class="mc-feature-islands__action">Get Support</button>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- DAILY CALM RITUAL -->
+    <!-- ============================================================ -->
+    <section class="mc-daily-calm" aria-labelledby="mc-daily-calm-heading">
+      <h2 id="mc-daily-calm-heading" class="mc-daily-calm__title">Your Daily Calm Ritual</h2>
+
+      <div class="mc-daily-calm__cards">
+
+        <article class="mc-daily-calm__card mc-daily-calm__card--quote">
+          <div class="mc-daily-calm__icon"><i class="bi bi-quote" aria-hidden="true"></i></div>
+          <h3 class="mc-daily-calm__card-title">Today's Quote</h3>
+          <p class="mc-daily-calm__card-content">"Peace comes from within. Do not seek it without."</p>
+          <button type="button" class="mc-daily-calm__refresh" aria-label="Refresh today's quote">
+            <i class="bi bi-arrow-clockwise" aria-hidden="true"></i>
+          </button>
+        </article>
+
+        <article class="mc-daily-calm__card mc-daily-calm__card--tip">
+          <div class="mc-daily-calm__icon"><i class="bi bi-lightbulb" aria-hidden="true"></i></div>
+          <h3 class="mc-daily-calm__card-title">Today's Wellness Tip</h3>
+          <p class="mc-daily-calm__card-content">Take three deep breaths before checking your phone this morning.</p>
+          <button type="button" class="mc-daily-calm__refresh" aria-label="Refresh today's wellness tip">
+            <i class="bi bi-arrow-clockwise" aria-hidden="true"></i>
+          </button>
+        </article>
+
+        <article class="mc-daily-calm__card mc-daily-calm__card--challenge">
+          <div class="mc-daily-calm__icon"><i class="bi bi-flag" aria-hidden="true"></i></div>
+          <h3 class="mc-daily-calm__card-title">Today's Tiny Challenge</h3>
+          <p class="mc-daily-calm__card-content">Write down one thing you're grateful for before bed tonight.</p>
+          <button type="button" class="mc-daily-calm__refresh" aria-label="Refresh today's tiny challenge">
+            <i class="bi bi-arrow-clockwise" aria-hidden="true"></i>
+          </button>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SECRET DISCOVERY -->
+    <!-- ============================================================ -->
+    <section class="mc-secret" aria-label="Hidden discovery">
+      <div data-firefly-layer></div>
+
+      <!-- Tiny Firefly Container -->
+      <div class="mc-secret__fireflies" aria-hidden="true">
+        <span class="mc-secret__firefly mc-secret__firefly--one"></span>
+        <span class="mc-secret__firefly mc-secret__firefly--two"></span>
+        <span class="mc-secret__firefly mc-secret__firefly--three"></span>
+      </div>
+
+      <!-- Hidden Golden Bubble -->
+      <button type="button" class="mc-secret__golden-bubble" aria-label="Discover a hidden surprise" hidden>
+        <span class="mc-secret__bubble-shine" aria-hidden="true"></span>
+      </button>
+
+      <!-- Popup Container -->
+      <div class="mc-secret__popup" role="dialog" aria-modal="true" tabindex="-1" aria-labelledby="mc-secret-message" hidden>
+        <p id="mc-secret-message" class="mc-secret__message">You found a hidden moment of calm. Take a breath — this one's just for you.</p>
+        <button type="button" class="mc-secret__close" aria-label="Close hidden message">
+          <i class="bi bi-x-lg" aria-hidden="true"></i>
+        </button>
+      </div>
+
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- TESTIMONIAL EXPERIENCE -->
+    <!-- ============================================================ -->
+    <section class="mc-testimonials" aria-labelledby="mc-testimonials-heading">
+      <h2 id="mc-testimonials-heading" class="mc-testimonials__title">Voices From Our Community</h2>
+
+      <div class="mc-testimonials__conversation">
+
+        <article class="mc-testimonials__bubble mc-testimonials__bubble--one">
+          <div class="mc-testimonials__avatar" aria-hidden="true"></div>
+          <p class="mc-testimonials__feedback">"The Mood Garden helped me actually notice how I feel each day."</p>
+          <p class="mc-testimonials__name">Amara Okafor</p>
+          <p class="mc-testimonials__role">Teacher</p>
+        </article>
+
+        <article class="mc-testimonials__bubble mc-testimonials__bubble--two">
+          <div class="mc-testimonials__avatar" aria-hidden="true"></div>
+          <p class="mc-testimonials__feedback">"Journaling here feels safe, quiet, and completely mine."</p>
+          <p class="mc-testimonials__name">Daniel Reyes</p>
+          <p class="mc-testimonials__role">Software Engineer</p>
+        </article>
+
+        <article class="mc-testimonials__bubble mc-testimonials__bubble--three">
+          <div class="mc-testimonials__avatar" aria-hidden="true"></div>
+          <p class="mc-testimonials__feedback">"The daily ritual cards are the calmest five seconds of my morning."</p>
+          <p class="mc-testimonials__name">Priya Sharma</p>
+          <p class="mc-testimonials__role">Nurse</p>
+        </article>
+
+        <article class="mc-testimonials__bubble mc-testimonials__bubble--four">
+          <div class="mc-testimonials__avatar" aria-hidden="true"></div>
+          <p class="mc-testimonials__feedback">"I didn't expect a website to feel this gentle. It really does."</p>
+          <p class="mc-testimonials__name">Liam Carter</p>
+          <p class="mc-testimonials__role">Graphic Designer</p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- NEWSLETTER -->
+    <!-- ============================================================ -->
+    <section class="mc-newsletter" aria-labelledby="mc-newsletter-heading">
+      <h2 id="mc-newsletter-heading" class="mc-newsletter__heading">Stay Gently Connected</h2>
+      <p class="mc-newsletter__description">Receive calming insights, mindful prompts, and wellness updates in your inbox.</p>
+
+     <form class="mc-newsletter__form">
+        <label for="mc-newsletter-email" class="mc-newsletter__label">Email address</label>
+        <input
+          type="email"
+          id="mc-newsletter-email"
+          name="email"
+          class="mc-newsletter__input"
+          placeholder="you@example.com"
+          aria-describedby="mc-newsletter-privacy"
+          required
+        >
+        <button type="button" class="mc-newsletter__subscribe">Subscribe</button>
+      </form>
+
+      <p id="mc-newsletter-privacy" class="mc-newsletter__privacy">We respect your privacy. Unsubscribe anytime.</p>
+    </section>
+
+  </main>
+
+  <!-- ============================================================ -->
+  <!-- FOOTER -->
+  <!-- ============================================================ -->
+  <!-- Footer injected by component.js -->
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css">
+    <script src="js/index.js"></script>
+
+  <script src="js/common.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="js/component.js"></script>
+</body>
+</html>

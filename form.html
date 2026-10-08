@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MindCare Hub | Login & Sign Up</title>
+
+  <!-- Bootstrap 5.3.3 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
+  <!-- Google Font: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/component.css">
+  <style>
+    h1, h2, h3 { font-family: var(--mc-font-display); }
+
+    /* ===================== BACKGROUND DECORATION ===================== */
+    .bg-decor {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .bg-blob {
+      position: absolute;
+      filter: blur(30px);
+      opacity: 0.4;
+      will-change: transform;
+      background: linear-gradient(160deg, var(--mc-theme-accent), var(--mc-theme-secondary));
+      animation: blobBreathe 14s var(--mc-ease-gentle) infinite;
+    }
+
+    .bg-blob-teal {
+      width: 46vw;
+      height: 46vw;
+      min-width: 380px;
+      min-height: 380px;
+      border-radius: 42% 58% 65% 35% / 45% 40% 60% 55%;
+      top: -14%;
+      left: -12%;
+    }
+
+    .bg-blob-green {
+      width: 40vw;
+      height: 40vw;
+      min-width: 340px;
+      min-height: 340px;
+      border-radius: 62% 38% 45% 55% / 55% 62% 38% 45%;
+      bottom: -16%;
+      right: -10%;
+      background: linear-gradient(160deg, var(--mc-theme-secondary), var(--mc-theme-gold));
+      animation-delay: -6s;
+    }
+
+    .bg-blob-soft {
+      width: 26vw;
+      height: 26vw;
+      min-width: 220px;
+      min-height: 220px;
+      border-radius: 48% 52% 36% 64% / 64% 44% 56% 36%;
+      top: 40%;
+      left: 55%;
+      opacity: 0.22;
+      animation-delay: -3s;
+    }
+
+    @keyframes blobBreathe {
+      0%, 100% { transform: translate3d(0,0,0) scale(1); }
+      50%      { transform: translate3d(2%, -3%, 0) scale(1.06); }
+    }
+
+    /* ===================== WRAPPER & HEADER ===================== */
+    .portal-wrapper {
+      position: relative;
+      z-index: 1;
+      max-width: 520px;
+      margin: 0 auto;
+      padding: 56px 20px 40px;
+    }
+
+    .portal-header {
+      animation: fadeSlideUp 0.6s var(--mc-ease-soft) both;
+      margin-bottom: 28px;
+    }
+
+    .brand-mark {
+      width: 58px;
+      height: 58px;
+      margin: 0 auto 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 18px;
+      background: linear-gradient(160deg, var(--mc-accent-primary), var(--mc-accent-primary-dark));
+      color: #fff;
+      font-size: 26px;
+      box-shadow: 0 14px 30px -8px var(--mc-theme-glow);
+    }
+
+    .brand-title {
+      font-family: var(--mc-font-display);
+      font-weight: 800;
+      font-size: 2rem;
+      letter-spacing: -0.02em;
+      margin: 0 0 6px;
+      color: var(--mc-text-primary);
+    }
+
+    .brand-subtitle { color: var(--mc-text-secondary); font-size: 1rem; margin: 0; }
+
+    .brand-home-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--mc-text-secondary);
+      margin-top: 10px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: var(--mc-glass-bg-faint);
+      border: 1px solid var(--mc-glass-border-soft);
+      transition: background var(--mc-dur-fast) ease, color var(--mc-dur-fast) ease;
+    }
+    .brand-home-link:hover { background: var(--mc-glass-bg); color: var(--mc-accent-primary-dark); text-decoration: none; }
+
+    @keyframes breathingGlow {
+      0%, 100% { box-shadow: 0 14px 30px -8px var(--mc-theme-glow); }
+      50%      { box-shadow: 0 18px 42px -6px var(--mc-theme-glow); }
+    }
+
+    /* ===================== GLASS CARD ===================== */
+    .glass-card {
+      background: var(--mc-glass-bg-strong);
+      backdrop-filter: blur(16px) saturate(140%);
+      -webkit-backdrop-filter: blur(16px) saturate(140%);
+      border: 1px solid var(--mc-glass-border);
+      border-radius: var(--mc-radius-lg);
+      box-shadow: var(--mc-shadow-lg);
+      padding: 40px;
+      animation: fadeSlideUp 0.7s 0.05s var(--mc-ease-soft) both;
+      position: relative;
+      isolation: isolate;
+      will-change: transform;
+    }
+
+    .glass-card::before {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      border-radius: inherit;
+      padding: 1px;
+      background: linear-gradient(135deg, var(--mc-theme-accent), transparent 40%, transparent 60%, var(--mc-theme-secondary));
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      opacity: 0.55;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    @media (max-width: 576px) {
+      .glass-card { padding: 26px 18px; border-radius: 24px; }
+    }
+
+    /* ===================== TABS ===================== */
+    .auth-tabs {
+      display: flex;
+      gap: 4px;
+      background: var(--mc-glass-bg);
+      border: 1px solid var(--mc-glass-border-soft);
+      border-radius: 14px;
+      padding: 4px;
+      margin-bottom: 28px;
+    }
+
+    .auth-tab {
+      flex: 1;
+      padding: 12px 16px;
+      border: none;
+      background: transparent;
+      border-radius: 11px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--mc-text-secondary);
+      cursor: pointer;
+      transition: all 0.3s var(--mc-ease-soft);
+      font-family: var(--mc-font-display);
+    }
+
+    .auth-tab:hover {
+      color: var(--mc-text-primary);
+      background: var(--mc-glass-bg-faint);
+    }
+
+    .auth-tab.active {
+      background: linear-gradient(135deg, var(--mc-accent-primary), var(--mc-accent-primary-dark));
+      color: #fff;
+      box-shadow: 0 4px 14px -4px var(--mc-theme-glow);
+    }
+
+    /* ===================== TAB PANELS ===================== */
+    .auth-panel {
+      display: none;
+      animation: fadeSlideUp 0.4s var(--mc-ease-soft) both;
+    }
+
+    .auth-panel.active {
+      display: block;
+    }
+
+    /* ===================== FORM STYLES ===================== */
+    .form-label {
+      font-weight: 600;
+      font-size: 0.88rem;
+      color: var(--mc-text-primary);
+      margin-bottom: 6px;
+      display: inline-block;
+    }
+
+    .field-group { position: relative; }
+
+    .field-group .form-control { height: auto; }
+
+    .form-control {
+      border-radius: 16px;
+      border: 1.5px solid var(--mc-glass-border-soft);
+      background: var(--mc-glass-bg);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      padding: 15px 18px;
+      font-size: 0.95rem;
+      color: var(--mc-text-primary);
+      transition: border-color var(--mc-dur-fast) ease, box-shadow var(--mc-dur-fast) ease, background var(--mc-dur-fast) ease, transform var(--mc-dur-fast) ease;
+    }
+
+    .field-group .form-control { padding-top: 22px; padding-bottom: 10px; }
+
+    .field-group.has-icon .form-control { padding-left: 44px; }
+    .field-group.has-toggle .form-control { padding-right: 46px; }
+
+    .form-control::placeholder { opacity: 0; transition: opacity var(--mc-dur-fast) ease; }
+    .form-control:focus::placeholder { opacity: 0.55; }
+
+    .form-control:focus {
+      border-color: var(--mc-accent-primary);
+      box-shadow: 0 0 0 4px color-mix(in srgb, var(--mc-accent-primary) 16%, transparent);
+      background: rgba(255,255,255,0.85);
+      transform: translateY(-1px) scale(1.004);
+      outline: none;
+    }
+
+    .floating-label {
+      position: absolute;
+      left: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--mc-text-secondary);
+      pointer-events: none;
+      transition: all var(--mc-dur-fast) var(--mc-ease-soft);
+      margin: 0;
+      background: none;
+      z-index: 1;
+    }
+    .field-group.has-icon .floating-label { left: 44px; }
+
+    .field-group.is-focused .floating-label,
+    .field-group.has-value .floating-label {
+      top: 13px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      color: var(--mc-accent-primary-dark);
+    }
+
+    .field-icon {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--mc-accent-primary-dark);
+      font-size: 1rem;
+      opacity: 0.75;
+      pointer-events: none;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+    }
+
+    .pw-toggle {
+      position: absolute;
+      right: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      color: var(--mc-text-secondary);
+      cursor: pointer;
+      padding: 4px;
+      z-index: 1;
+      transition: color var(--mc-dur-fast) ease;
+    }
+    .pw-toggle:hover { color: var(--mc-accent-primary-dark); }
+
+    .field-group.is-shaking { animation: fieldShake 0.4s var(--mc-ease-gentle); }
+    @keyframes fieldShake {
+      10%, 90% { transform: translateX(-1px); }
+      20%, 80% { transform: translateX(2px); }
+      30%, 50%, 70% { transform: translateX(-4px); }
+      40%, 60% { transform: translateX(4px); }
+    }
+
+    .invalid-feedback { font-size: 0.8rem; }
+
+    .form-control.is-invalid { box-shadow: 0 0 0 3px color-mix(in srgb, var(--danger) 14%, transparent); }
+
+    /* ===================== ERROR ALERT ===================== */
+    .auth-error {
+      display: none;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 16px;
+      border-radius: 12px;
+      background: color-mix(in srgb, var(--danger) 10%, transparent);
+      border: 1px solid color-mix(in srgb, var(--danger) 25%, transparent);
+      color: var(--danger);
+      font-size: 0.88rem;
+      font-weight: 600;
+      margin-bottom: 18px;
+      animation: fadeSlideUp 0.3s var(--mc-ease-soft) both;
+    }
+    .auth-error.show { display: flex; }
+    .auth-error i { font-size: 1.1rem; flex-shrink: 0; }
+
+    /* ===================== PREMIUM BUTTON ===================== */
+    .premium-btn {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, var(--mc-accent-primary), var(--mc-accent-primary-dark));
+      color: #fff;
+      border: none;
+      border-radius: 999px;
+      padding: 15px 20px;
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 0.01em;
+      box-shadow: 0 14px 28px -10px var(--mc-theme-glow);
+      transition: transform var(--mc-dur-fast) var(--mc-ease-soft), box-shadow var(--mc-dur-fast) ease;
+    }
+    .premium-btn:hover:not(:disabled) {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 34px -8px var(--mc-theme-glow);
+      color: #fff;
+    }
+    .premium-btn:active:not(:disabled) { transform: translateY(0); }
+    .premium-btn:disabled { opacity: 0.75; cursor: not-allowed; }
+
+    .premium-btn .ripple {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.55);
+      transform: scale(0);
+      animation: rippleAnim 0.6s ease-out;
+      pointer-events: none;
+    }
+
+    /* ===================== SWITCH LINK ===================== */
+    .auth-switch {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 0.9rem;
+      color: var(--mc-text-secondary);
+    }
+
+    .auth-switch a {
+      color: var(--mc-accent-primary-dark);
+      font-weight: 700;
+      cursor: pointer;
+      transition: color var(--mc-dur-fast) ease;
+    }
+    .auth-switch a:hover { color: var(--mc-accent-primary); }
+
+    /* ===================== DIVIDER ===================== */
+    .auth-divider {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 20px 0;
+      color: var(--mc-text-secondary);
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+    .auth-divider::before,
+    .auth-divider::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--mc-glass-border-soft);
+    }
+
+    /* ===================== FOOTER ===================== */
+    .portal-footer { margin-top: 26px; color: var(--mc-text-secondary); font-size: 0.8rem; }
+
+    /* ===================== LOADING OVERLAY ===================== */
+    .loading-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(244, 247, 247, 0.55);
+      backdrop-filter: blur(22px) saturate(150%);
+      -webkit-backdrop-filter: blur(22px) saturate(150%);
+      animation: fadeIn 0.3s ease both;
+    }
+
+    .loader-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      background: var(--mc-glass-bg-strong);
+      border: 1px solid var(--mc-glass-border);
+      padding: 44px 52px;
+      border-radius: var(--mc-radius-lg);
+      box-shadow: var(--mc-shadow-lg);
+      min-width: 280px;
+    }
+
+    .loader-logo {
+      width: 48px;
+      height: 48px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 22px;
+      background: linear-gradient(160deg, var(--mc-accent-primary), var(--mc-accent-primary-dark));
+      animation: logoPulse 1.6s var(--mc-ease-gentle) infinite;
+    }
+    @keyframes logoPulse {
+      0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 color-mix(in srgb, var(--mc-accent-primary) 35%, transparent); }
+      50%      { transform: scale(1.08); box-shadow: 0 0 0 10px transparent; }
+    }
+
+    .apple-spinner {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 3px solid color-mix(in srgb, var(--mc-accent-primary) 18%, transparent);
+      border-top-color: var(--mc-accent-primary);
+      animation: spin 0.85s linear infinite;
+    }
+
+    .loader-text { margin: 0; font-weight: 600; color: var(--mc-text-primary); min-height: 1.4em; text-align: center; }
+
+    .loader-progress { width: 100%; height: 4px; border-radius: 999px; background: var(--mc-glass-border-soft); overflow: hidden; }
+    .loader-progress span {
+      display: block; height: 100%; width: 0%;
+      background: linear-gradient(90deg, var(--mc-accent-primary), var(--mc-accent-primary-dark));
+      border-radius: 999px;
+      transition: width 1.4s var(--mc-ease-soft);
+    }
+
+    /* ===================== ANIMATIONS ===================== */
+    @keyframes fadeSlideUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @keyframes rippleAnim { to { transform: scale(3); opacity: 0; } }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+      }
+    }
+
+    /* ===================== RESPONSIVE ===================== */
+    @media (max-width: 375px) {
+      .brand-title { font-size: 1.6rem; }
+      .glass-card { padding: 26px 18px; }
+      .loader-card { padding: 32px 28px; min-width: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ================= BACKGROUND LAYER ================= -->
+  <div class="bg-decor" aria-hidden="true">
+    <div class="bg-blob bg-blob-teal"></div>
+    <div class="bg-blob bg-blob-green"></div>
+    <div class="bg-blob bg-blob-soft"></div>
+  </div>
+
+  <!-- ================= MAIN WRAPPER ================= -->
+  <main class="portal-wrapper">
+
+    <!-- ============ HEADER / LOGO ============ -->
+    <header class="portal-header text-center">
+      <div class="brand-mark">
+        <i class="bi bi-heart-pulse-fill"></i>
+      </div>
+      <h1 class="brand-title">MindCare Hub</h1>
+      <p class="brand-subtitle">Welcome back! Sign in to continue your journey.</p>
+      <a href="index.html" class="brand-home-link"><i class="bi bi-arrow-left"></i> Back to MindCare Hub</a>
+    </header>
+
+    <!-- ============ FLOATING GLASS CARD ============ -->
+    <section class="glass-card" id="glassCard">
+
+      <!-- ===== TABS ===== -->
+      <div class="auth-tabs" id="authTabs">
+        <button type="button" class="auth-tab active" data-tab="login">Login</button>
+        <button type="button" class="auth-tab" data-tab="signup">Sign Up</button>
+      </div>
+
+      <!-- ===== ERROR ALERT ===== -->
+      <div class="auth-error" id="authError">
+        <i class="bi bi-exclamation-triangle-fill"></i>
+        <span id="authErrorText">Invalid email or password.</span>
+      </div>
+
+      <!-- ===== LOGIN PANEL ===== -->
+      <div class="auth-panel active" id="loginPanel">
+        <form id="loginForm" novalidate>
+          <div class="mb-3">
+            <div class="field-group has-icon" id="loginEmailGroup">
+              <span class="field-icon"><i class="bi bi-envelope"></i></span>
+              <input type="email" id="loginEmail" name="email" class="form-control" placeholder="Email" required />
+              <label class="floating-label" for="loginEmail">Email</label>
+              <div class="invalid-feedback">Enter a valid email address.</div>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <div class="field-group has-icon has-toggle" id="loginPasswordGroup">
+              <span class="field-icon"><i class="bi bi-lock"></i></span>
+              <input type="password" id="loginPassword" name="password" class="form-control" placeholder="Password" required />
+              <label class="floating-label" for="loginPassword">Password</label>
+              <button type="button" class="pw-toggle" aria-label="Show password">
+                <i class="bi bi-eye"></i>
+              </button>
+              <div class="invalid-feedback">Password is required.</div>
+            </div>
+          </div>
+
+          <button type="submit" class="btn premium-btn w-100 mt-2" id="loginBtn">
+            <span class="btn-text">Login</span>
+            <span class="btn-spinner d-none"><span class="spinner-border spinner-border-sm me-2"></span>Signing in...</span>
+          </button>
+        </form>
+
+        <div class="auth-switch">
+          Don't have an account? <a id="switchToSignup">Sign Up</a>
+        </div>
+      </div>
+
+      <!-- ===== SIGNUP PANEL ===== -->
+      <div class="auth-panel" id="signupPanel">
+        <form id="signupForm" novalidate>
+          <div class="mb-3">
+            <div class="field-group has-icon" id="signupNameGroup">
+              <span class="field-icon"><i class="bi bi-person"></i></span>
+              <input type="text" id="signupName" name="name" class="form-control" placeholder="Name" required />
+              <label class="floating-label" for="signupName">Full Name</label>
+              <div class="invalid-feedback">Name must be 3-40 characters, letters only.</div>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <div class="field-group has-icon" id="signupEmailGroup">
+              <span class="field-icon"><i class="bi bi-envelope"></i></span>
+              <input type="email" id="signupEmail" name="email" class="form-control" placeholder="Email" required />
+              <label class="floating-label" for="signupEmail">Email</label>
+              <div class="invalid-feedback">Enter a valid email address.</div>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <div class="field-group has-icon has-toggle" id="signupPasswordGroup">
+              <span class="field-icon"><i class="bi bi-lock"></i></span>
+              <input type="password" id="signupPassword" name="password" class="form-control" placeholder="Password" required />
+              <label class="floating-label" for="signupPassword">Password</label>
+              <button type="button" class="pw-toggle" aria-label="Show password">
+                <i class="bi bi-eye"></i>
+              </button>
+              <div class="invalid-feedback">Password must contain uppercase, lowercase, number & special character.</div>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <div class="field-group has-icon has-toggle" id="signupConfirmGroup">
+              <span class="field-icon"><i class="bi bi-lock-fill"></i></span>
+              <input type="password" id="signupConfirm" name="confirmPassword" class="form-control" placeholder="Confirm Password" required />
+              <label class="floating-label" for="signupConfirm">Confirm Password</label>
+              <button type="button" class="pw-toggle" aria-label="Show password">
+                <i class="bi bi-eye"></i>
+              </button>
+              <div class="invalid-feedback">Passwords do not match.</div>
+            </div>
+          </div>
+
+          <button type="submit" class="btn premium-btn w-100 mt-2" id="signupBtn">
+            <span class="btn-text">Create Account</span>
+            <span class="btn-spinner d-none"><span class="spinner-border spinner-border-sm me-2"></span>Creating...</span>
+          </button>
+        </form>
+
+        <div class="auth-switch">
+          Already have an account? <a id="switchToLogin">Login</a>
+        </div>
+      </div>
+
+    </section>
+
+    <footer class="portal-footer text-center">
+      <p>&copy; 2026 MindCare Hub. Your data stays on this device.</p>
+    </footer>
+  </main>
+
+  <!-- ================= LOADING OVERLAY ================= -->
+  <div class="loading-overlay d-none" id="loadingOverlay">
+    <div class="loader-card">
+      <div class="loader-logo" aria-hidden="true"><i class="bi bi-heart-pulse-fill"></i></div>
+      <div class="apple-spinner" aria-hidden="true"></div>
+      <p class="loader-text" id="loaderText">Signing you in...</p>
+      <div class="loader-progress" aria-hidden="true"><span id="loaderProgress"></span></div>
+    </div>
+  </div>
+
+  <!-- Bootstrap Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/form.js"></script>
+  <script src="js/common.js"></script>
+</body>
+</html>

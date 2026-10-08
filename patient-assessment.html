@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Patient Assessment | MindCare Hub</title>
+<meta name="description" content="Share how you're feeling in a few gentle steps — your reflection goes straight to your care team.">
+ 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css">
+<link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/premium-theme.css">
+ 
+
+  <link rel="stylesheet" href="css/patient-assessment.css">
+
+    <link rel="stylesheet" href="css/component.css">
+</head>
+<body class="theme-calm">
+ 
+<!-- Navbar injected by component.js -->
+ 
+<main>
+  <div class="mc-page-header">
+    <h1 class="mc-page-header__title">Patient <span>Self Assessment</span></h1>
+    <p class="mc-page-header__subtitle">Share how you've been feeling — it takes about two seconds and goes straight to your care team.</p>
+  </div>
+ 
+  <section class="mc-assessment">
+    <div class="mc-assessment__wrap">
+      <div class="mc-assessment__card">
+ 
+        <div class="mc-assessment__steps">
+          <div class="mc-assessment__dot is-active" id="dot1">1</div>
+          <div class="mc-assessment__dot" id="dot2">2</div>
+          <div class="mc-assessment__dot" id="dot3">3</div>
+          <div class="mc-assessment__dot" id="dot4">4</div>
+          <div class="mc-assessment__dot" id="dot5">5</div>
+        </div>
+ 
+        <form id="assessmentForm" onsubmit="return false;">
+ 
+          <!-- STEP 1 -->
+          <div class="mc-assessment__pane is-active" id="step1">
+            <h2 class="mc-assessment__step-title"><i class="bi bi-person-circle"></i> Personal Information</h2>
+            <p class="mc-assessment__step-hint">A few basic details so your doctor can identify your record correctly.</p>
+            <div class="mc-assessment__grid">
+              <div class="mc-assessment__field"><label>Full Name</label><input type="text" class="mc-assessment__input" id="pName" placeholder="Your name" required></div>
+              <div class="mc-assessment__field"><label>Age</label><input type="number" class="mc-assessment__input" id="pAge" placeholder="Age" min="5" max="100" required></div>
+              <div class="mc-assessment__field"><label>Gender</label>
+                <select class="mc-assessment__input" id="pGender">
+                  <option value="">-- Select --</option><option>Male</option><option>Female</option><option>Other</option><option>Prefer not to say</option>
+                </select>
+              </div>
+              <div class="mc-assessment__field"><label>Contact Number</label><input type="tel" class="mc-assessment__input" id="pPhone" placeholder="03XX-XXXXXXX"></div>
+              <div class="mc-assessment__field mc-assessment__field--full"><label>Occupation / Status</label>
+                <select class="mc-assessment__input" id="pOccupation">
+                  <option value="">-- Select --</option><option>Student</option><option>Working Professional</option><option>Homemaker</option><option>Unemployed</option><option>Other</option>
+                </select>
+              </div>
+            </div>
+          </div>
+ 
+          <!-- STEP 2 -->
+          <div class="mc-assessment__pane" id="step2">
+            <h2 class="mc-assessment__step-title"><i class="bi bi-activity"></i> Stress &amp; Anxiety Level</h2>
+            <p class="mc-assessment__step-hint">Over the past 7 days, how much stress and anxiety have you felt?</p>
+            <div class="mc-assessment__slider-wrap">
+              <label>Stress Level</label>
+              <input type="range" min="0" max="10" value="5" class="mc-assessment__slider" id="stressSlider" oninput="updateLevel('stress')">
+              <div class="mc-assessment__slider-value" id="stressVal">5 / 10</div>
+              <div class="mc-assessment__slider-labels"><span>😌 Calm</span><span>😣 Severe</span></div>
+            </div>
+            <div class="mc-assessment__slider-wrap">
+              <label>Anxiety Level</label>
+              <input type="range" min="0" max="10" value="5" class="mc-assessment__slider" id="anxietySlider" oninput="updateLevel('anxiety')">
+              <div class="mc-assessment__slider-value" id="anxietyVal">5 / 10</div>
+              <div class="mc-assessment__slider-labels"><span>😊 Relaxed</span><span>😰 Severe</span></div>
+            </div>
+          </div>
+ 
+          <!-- STEP 3 -->
+          <div class="mc-assessment__pane" id="step3">
+            <h2 class="mc-assessment__step-title"><i class="bi bi-moon-stars"></i> Sleep Quality</h2>
+            <p class="mc-assessment__step-hint">Your sleep pattern tells your doctor a lot.</p>
+            <label style="font-weight:700;font-size:var(--mc-fs-sm);display:block;margin-bottom:.5rem;">Average Sleep Hours</label>
+            <div class="mc-assessment__pill-row" id="sleepHoursOptions" style="margin-bottom:1.2rem;">
+              <div class="mc-assessment__pill" onclick="selectPill(this,'sleepHours','Less than 4 hrs')">&lt; 4 hrs</div>
+              <div class="mc-assessment__pill" onclick="selectPill(this,'sleepHours','4-6 hrs')">4-6 hrs</div>
+              <div class="mc-assessment__pill" onclick="selectPill(this,'sleepHours','7-9 hrs')">7-9 hrs</div>
+              <div class="mc-assessment__pill" onclick="selectPill(this,'sleepHours','9+ hrs')">9+ hrs</div>
+            </div>
+            <label style="font-weight:700;font-size:var(--mc-fs-sm);display:block;margin-bottom:.5rem;">Sleep Quality</label>
+            <div class="mc-assessment__pill-row" style="grid-template-columns:repeat(3,1fr);">
+              <div class="mc-assessment__pill" onclick="selectPill(this,'sleepQuality','Poor')">😴 Poor</div>
+              <div class="mc-assessment__pill" onclick="selectPill(this,'sleepQuality','Average')">😐 Average</div>
+              <div class="mc-assessment__pill" onclick="selectPill(this,'sleepQuality','Good')">😊 Good</div>
+            </div>
+          </div>
+ 
+          <!-- STEP 4 -->
+          <div class="mc-assessment__pane" id="step4">
+            <h2 class="mc-assessment__step-title"><i class="bi bi-journal-text"></i> Daily Notes &amp; Wellness Goals</h2>
+            <p class="mc-assessment__step-hint">In your own words — how are you feeling, and what would you like to work on?</p>
+            <div class="mc-assessment__field mc-assessment__field--full" style="margin-bottom:1.2rem;">
+              <label>Daily Notes</label>
+              <textarea class="mc-assessment__input" id="pNotes" rows="4" placeholder="How are you feeling today? Share anything on your mind..."></textarea>
+            </div>
+            <label style="font-weight:700;font-size:var(--mc-fs-sm);display:block;margin-bottom:.5rem;">Wellness Goals (select as many as you like)</label>
+            <div class="mc-assessment__tags" id="goalTags">
+              <div class="mc-assessment__tag" onclick="toggleGoal(this,'Better Sleep')">😴 Better Sleep</div>
+              <div class="mc-assessment__tag" onclick="toggleGoal(this,'Reduce Anxiety')">😌 Reduce Anxiety</div>
+              <div class="mc-assessment__tag" onclick="toggleGoal(this,'Improve Focus')">🎯 Improve Focus</div>
+              <div class="mc-assessment__tag" onclick="toggleGoal(this,'Build Confidence')">💪 Build Confidence</div>
+              <div class="mc-assessment__tag" onclick="toggleGoal(this,'Manage Stress')">🧘 Manage Stress</div>
+              <div class="mc-assessment__tag" onclick="toggleGoal(this,'Healthy Habits')">🥗 Healthy Habits</div>
+              <div class="mc-assessment__tag" onclick="toggleGoal(this,'Emotional Balance')">💛 Emotional Balance</div>
+            </div>
+          </div>
+ 
+          <!-- STEP 5 -->
+          <div class="mc-assessment__pane" id="step5">
+            <h2 class="mc-assessment__step-title"><i class="bi bi-clipboard2-check"></i> Review Your Assessment</h2>
+            <div class="mc-assessment__review" id="reviewBox"></div>
+          </div>
+ 
+          <!-- SUCCESS -->
+          <div class="mc-assessment__pane" id="stepSuccess">
+            <div class="mc-assessment__success">
+              <div class="mc-assessment__success-icon"><i class="bi bi-check-lg"></i></div>
+              <h4>Assessment Submitted 🎉</h4>
+              <p>Your report has been sent to your doctor. You can review your progress on your dashboard.</p>
+              <div class="mc-assessment__success-actions">
+                <a href="patient-dashboard.html" class="mc-btn mc-btn--primary">My Dashboard</a>
+                <a href="activity.html" class="mc-btn mc-btn--secondary">Try Activities</a>
+              </div>
+            </div>
+          </div>
+ 
+          <div class="mc-assessment__nav" id="navButtons">
+            <button type="button" class="mc-btn mc-btn--secondary" id="prevBtn" onclick="changeStep(-1)" style="visibility:hidden;">← Previous</button>
+            <button type="button" class="mc-btn mc-btn--primary" id="nextBtn" onclick="changeStep(1)">Next →</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+ 
+<!-- Footer injected by component.js -->
+ 
+<script src="js/patient-assessment.js"></script>
+<script src="js/common.js"></script>
+<script src="js/component.js"></script>
+</body>
+</html>
